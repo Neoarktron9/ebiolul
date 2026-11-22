@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+<meta charset="utf-8" />
+<link rel="icon" type="image/png" href="https://ebio.gg/assets/img/favicon.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script>(function setInitialMode({ defaultMode = "system", themeColors: themeColors2, darkClassNames: darkClassNames2 = ["dark"], lightClassNames: lightClassNames2 = [], defaultTheme = "", modeStorageKey: modeStorageKey2 = "mode-watcher-mode", themeStorageKey: themeStorageKey2 = "mode-watcher-theme" }) {
+const rootEl = document.documentElement, mode = localStorage.getItem(modeStorageKey2) ?? defaultMode, theme = localStorage.getItem(themeStorageKey2) ?? defaultTheme, light = mode === "light" || mode === "system" && window.matchMedia("(prefers-color-scheme: light)").matches;
+if (light) {
+if (darkClassNames2.length) rootEl.classList.remove(...darkClassNames2.filter(Boolean));
+if (lightClassNames2.length) rootEl.classList.add(...lightClassNames2.filter(Boolean));
+} else {
+if (lightClassNames2.length) rootEl.classList.remove(...lightClassNames2.filter(Boolean));
+if (darkClassNames2.length) rootEl.classList.add(...darkClassNames2.filter(Boolean));
+}
+rootEl.style.colorScheme = light ? "light" : "dark";
+if (theme) { rootEl.setAttribute("data-theme", theme); localStorage.setItem(themeStorageKey2, theme); }
+localStorage.setItem(modeStorageKey2, mode);
+})({"defaultMode":"dark","darkClassNames":["dark"],"lightClassNames":[],"defaultTheme":"","modeStorageKey":"mode-watcher-mode","themeStorageKey":"mode-watcher-theme"});</script>
+<meta name="description" content="Activate and customize your profile cosmetics on ebio.gg." />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="canonical" href="https://ebio.gg/dashboard/cosmetics" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ebio.gg/dashboard/cosmetics" />
+<meta property="og:title" content="Cosmetics | ebio" />
+<meta property="og:description" content="Activate and customize your profile cosmetics on ebio.gg." />
+<meta property="og:image" content="https://ebio.gg/assets/img/og-default.png" />
+<title>Cosmetics | ebio</title>
+<link href="../assets/css/0.C2bWUDFM.css" rel="stylesheet" />
+<link href="../assets/css/StyleProvider.BXnnGwMW.css" rel="stylesheet" />
+<link href="../assets/css/_ModuleRoot.CidXDgXL.css" rel="stylesheet" />
+<link href="../assets/css/profile-renderer.DZOebmRz.css" rel="stylesheet" />
+<link href="../assets/css/site-header.DYfRv1QL.css" rel="stylesheet" />
+<link href="../assets/css/tokens.css" rel="stylesheet" />
+<link href="../assets/css/components.css" rel="stylesheet" />
+<style>
+  .custom-select-btn {
+    background-color: #111111;
+    border: 1px solid #262626;
+    border-radius: 8px;
+    padding: 9px 14px;
+    font-size: 13.5px;
+    color: #f5f5f5;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: border-color 0.15s ease;
+  }
+  .custom-select-btn:hover {
+    border-color: #3e3e3e;
+  }
+  .custom-dropdown {
+    background-color: #141414;
+    border: 1px solid #282828;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.65);
+    margin-top: 4px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 50;
+    width: 100%;
+  }
+  .custom-dropdown-item {
+    padding: 9px 14px;
+    font-size: 13.5px;
+    color: #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .custom-dropdown-item:hover {
+    background-color: #1f1f1f;
+  }
+  .custom-dropdown-item.selected {
+    color: #ffffff;
+    font-weight: 500;
+  }
+  .switch-track {
+    position: relative;
+    display: inline-flex;
+    height: 24px;
+    width: 44px;
+    flex-shrink: 0;
+    cursor: pointer;
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    transition: background-color 0.2s ease-in-out;
+  }
+  .switch-thumb {
+    pointer-events: none;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border-radius: 9999px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease-in-out;
+  }
+  .switch-on { background-color: #ffffff; }
+  .switch-on .switch-thumb { transform: translateX(20px); background-color: #0c0c0c; }
+  .switch-off { background-color: #27272a; }
+  .switch-off .switch-thumb { transform: translateX(0); background-color: #ffffff; }
+</style>
+</head>
+<body class="bg-[#0c0c0c] text-foreground antialiased selection:bg-primary selection:text-primary-foreground">
+<div class="min-h-screen">
+<div data-sidebar-wrapper="true" style="--sidebar-width: 16rem; --sidebar-width-icon: 3rem;" class="group/sidebar-wrapper flex min-h-svh w-full has-[[data-variant=inset]]:bg-sidebar">
+
+  <aside class="text-sidebar-foreground group peer hidden md:block" data-state="expanded" data-collapsible="" data-variant="inset" data-side="left" data-slot="sidebar">
+    <div data-slot="sidebar-gap" class="w-(--sidebar-width) relative bg-transparent transition-[width] duration-200 ease-linear group-data-[collapsible=offcanvas]:w-0 group-data-[side=right]:rotate-180 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]"></div>
+    <div data-slot="sidebar-container" class="w-(--sidebar-width) fixed inset-y-0 z-10 hidden h-svh transition-[left,right,width] duration-200 ease-linear md:flex left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)] p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]">
+      <div data-sidebar="sidebar" data-slot="sidebar-inner" class="bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm">
+        
+        <!-- Header -->
+        <div data-slot="sidebar-header" data-sidebar="header" class="flex flex-col gap-2 p-2">
+          <ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-1">
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+              <a href="overview.html" class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left transition-[width,height,padding] focus-visible:ring-2 h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground data-[slot=sidebar-menu-button]:!p-1.5" data-slot="sidebar-menu-button">
+                <svg class="scale-110" viewBox="0 0 448 451" fill="none" style="width:20px;height:20px" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M320.084 158.225L418.817 256.251C495.333 347.814 404.031 484.201 292.096 442.255C255.935 428.707 171.294 341.309 159.585 304.709C146.864 264.934 146.303 221.308 154.112 170.924C157.249 150.682 200.137 160.325 204.415 185.788C210.652 222.967 194.275 273.073 219.668 305.564C232.028 321.375 290.604 383.558 305.779 390.7C338.765 406.249 380.138 388.395 390.978 353.443C408.416 297.242 348.58 266.666 318.769 229.515L320.098 158.225H320.084Z" fill="white"></path>
+                  <path d="M126.973 291.84L28.2397 193.814C-48.2763 102.251 43.0253 -34.1359 154.96 7.80972C191.122 21.3579 275.762 108.756 287.472 145.356C300.193 185.131 300.754 228.757 292.945 279.141C289.808 299.383 246.919 289.74 242.641 264.277C236.405 227.098 252.781 176.992 227.389 144.5C215.029 128.69 156.452 66.5067 141.278 59.3649C108.291 43.8156 66.9185 61.6701 56.0785 96.6224C38.6413 152.823 98.4766 183.398 128.288 220.55L126.959 291.84H126.973Z" fill="white"></path>
+                </svg>
+                <span class="text-base font-semibold">ebio.gg</span>
+              </a>
+            </li>
+          </ul>
+          <div class="mt-3">
+            <label for="workspace-select" class="text-muted-foreground mb-1 block text-xs">Workspace</label>
+            <select id="workspace-select" class="bg-background w-full rounded-md border p-2 text-sm">
+              <option value="xox" selected>xxx</option>
+              <option value="__add__">+ Add new workspace…</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Navigation Content -->
+        <div data-slot="sidebar-content" data-sidebar="content" class="flex min-h-0 flex-1 flex-col overflow-auto scroll-thin">
+          
+          <!-- General Group -->
+          <div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col px-2">
+            <div class="text-sidebar-foreground/70 flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium" data-slot="sidebar-group-label">General</div>
+            <div data-slot="sidebar-group-content" class="w-full text-sm">
+              <ul data-slot="sidebar-menu" class="flex w-full min-w-0 flex-col gap-1">
+                <li data-slot="sidebar-menu-item">
+                  <a href="overview.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-dashboard shrink-0"><path d="M12 13m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path d="M13.45 11.55l2.05 -2.05"></path><path d="M6.4 20a9 9 0 1 1 11.2 0z"></path></svg>
+                      <span>Overview</span>
+                    </button>
+                  </a>
+                </li>
+                <li data-slot="sidebar-menu-item">
+                  <a href="analytics.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-chart-bar shrink-0"><path d="M3 13a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path><path d="M15 9a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path><path d="M9 5a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path><path d="M4 20h14"></path></svg>
+                      <span>Analytics</span>
+                    </button>
+                  </a>
+                </li>
+                <li data-slot="sidebar-menu-item">
+                  <a href="workspace.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-briefcase shrink-0"><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"></path><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"></path><path d="M12 12l0 .01"></path><path d="M3 13a20 20 0 0 0 18 0"></path></svg>
+                      <span>Workspace</span>
+                    </button>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Customization Group -->
+          <div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col px-2 mt-2">
+            <div class="text-sidebar-foreground/70 flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium" data-slot="sidebar-group-label">Customization</div>
+            <div data-slot="sidebar-group-content" class="w-full text-sm">
+              <ul data-slot="sidebar-menu" class="flex w-full min-w-0 flex-col gap-1">
+                <li data-slot="sidebar-menu-item">
+                  <a href="themes.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-palette shrink-0"><path d="M12 21a9 9 0 0 1 0 -18c4.97 0 9 3.582 9 8c0 1.06 -.474 2.078 -1.318 2.828c-.844 .75 -1.989 1.172 -3.182 1.172h-2.5a2 2 0 0 0 -1 3.75a1.3 1.3 0 0 1 -1 2.25"></path><path d="M8.5 10.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path d="M12.5 7.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path d="M16.5 10.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path></svg>
+                      <span>Themes</span>
+                    </button>
+                  </a>
+                </li>
+                <li data-slot="sidebar-menu-item">
+                  <a href="colors.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-color-swatch shrink-0"><path d="M19 3h-4a2 2 0 0 0 -2 2v12a4 4 0 0 0 8 0v-12a2 2 0 0 0 -2 -2"></path><path d="M13 7.35l-2 -2a2 2 0 0 0 -2.828 0l-2.828 2.828a2 2 0 0 0 0 2.828l9 9"></path><path d="M7.3 13h-2.3a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h12"></path><path d="M17 17l0 .01"></path></svg>
+                      <span>Colors</span>
+                    </button>
+                  </a>
+                </li>
+                <li data-slot="sidebar-menu-item">
+                  <a href="modules.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-folder shrink-0"><path d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2"></path></svg>
+                      <span>Modules</span>
+                    </button>
+                  </a>
+                </li>
+                <li data-slot="sidebar-menu-item">
+                  <a href="cosmetics.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm bg-primary text-primary-foreground font-medium" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-sparkles shrink-0"><path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z"></path></svg>
+                      <span>Cosmetics</span>
+                    </button>
+                  </a>
+                </li>
+                <li data-slot="sidebar-menu-item">
+                  <a href="socials.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-share shrink-0"><path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M8.7 10.7l6.6 -3.4"></path><path d="M8.7 13.3l6.6 3.4"></path></svg>
+                      <span>Socials</span>
+                    </button>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Share & Referrals Group -->
+          <div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col px-2 mt-2">
+            <div class="text-sidebar-foreground/70 flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium" data-slot="sidebar-group-label">Share &amp; Referrals</div>
+            <div data-slot="sidebar-group-content" class="w-full text-sm">
+              <ul data-slot="sidebar-menu" class="flex w-full min-w-0 flex-col gap-1">
+                <li data-slot="sidebar-menu-item">
+                  <a href="share.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-qrcode shrink-0"><path d="M4 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path><path d="M7 17l0 .01"></path><path d="M14 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path><path d="M7 7l0 .01"></path><path d="M4 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path><path d="M17 7l0 .01"></path><path d="M14 14l3 0"></path><path d="M20 14l0 .01"></path><path d="M14 14l0 3"></path><path d="M14 20l3 0"></path><path d="M17 17l3 0"></path><path d="M20 17l0 3"></path></svg>
+                      <span>Share</span>
+                    </button>
+                  </a>
+                </li>
+                <li data-slot="sidebar-menu-item">
+                  <a href="affiliate.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-share shrink-0"><path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M8.7 10.7l6.6 -3.4"></path><path d="M8.7 13.3l6.6 3.4"></path></svg>
+                      <span>Affiliate</span>
+                    </button>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- VIP Unlocked Banner / Button -->
+          <div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col px-2 mt-auto pb-2">
+            <div data-slot="sidebar-group-content" class="w-full text-sm">
+              <a href="billing.html" class="hover:bg-primary/20 flex items-center justify-center gap-2 rounded-lg border border-white/10 px-4 py-3 font-semibold text-white transition-colors" style="background:rgba(255,106,31,0.08)">
+                <img src="https://ebio.gg/assets/ranks/unlimited.svg" alt="VIP" class="h-4 w-4" />
+                <span style="font-size:12.5px">Unlimited VIP (Free)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Footer -->
+        <div data-slot="sidebar-footer" data-sidebar="footer" class="flex flex-col gap-2 p-2 border-t border-border">
+          <ul data-slot="sidebar-menu" class="flex w-full min-w-0 flex-col gap-1">
+            <li data-slot="sidebar-menu-item" class="relative">
+              <a href="account.html" class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-12 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground">
+                <div data-slot="avatar" class="relative flex shrink-0 overflow-hidden size-8 rounded-lg grayscale">
+                  <span data-slot="avatar-fallback" class="bg-muted flex size-full items-center justify-center rounded-lg font-semibold text-xs" style="background:#222;color:#fff">WL</span>
+                </div>
+                <div class="grid flex-1 text-left text-sm leading-tight min-w-0">
+                  <div class="flex items-center gap-1.5"><span class="truncate font-medium">wlqihp1vnmcoojgspyp#0</span></div>
+                  <span class="text-muted-foreground truncate text-xs" style="color:var(--success)">Unlimited Plan</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-dots-vertical ml-auto size-4 shrink-0 text-muted-foreground"><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </aside>
+
+  <main data-slot="sidebar-inset" class="bg-background relative flex w-full flex-1 flex-col md:peer-data-[variant=inset]:m-2 md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-2 md:peer-data-[variant=inset]:rounded-xl md:peer-data-[variant=inset]:shadow-sm">
+    
+    <!-- Top Header (Screenshot 6) -->
+    <header class="flex h-(--header-height) shrink-0 items-center gap-2 border-b border-border/80 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-(--header-height)">
+      <div class="flex w-full items-center gap-1 px-4 lg:gap-2 lg:px-6">
+        <button data-slot="sidebar-trigger" class="focus-visible:border-ring focus-visible:ring-ring/50 inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium outline-none transition-all hover:bg-accent hover:text-accent-foreground size-7 -ml-1" type="button" data-sidebar="trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-panel-left size-4"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 3v18"></path></svg>
+          <span class="sr-only">Toggle Sidebar</span>
+        </button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-400 mx-1"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path></svg>
+        <div class="flex flex-1 items-center justify-between gap-2">
+          <div>
+            <h1 class="text-sm font-bold leading-none tracking-tight">Cosmetics</h1>
+            <p class="text-muted-foreground hidden text-xs sm:block mt-0.5">Customize your profile appearance</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button type="button" class="border border-border/80 bg-background/80 shadow-xs hover:bg-accent hover:text-accent-foreground inline-flex items-center justify-center gap-1.5 rounded-md text-xs font-semibold h-8 px-3 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              Add Cosmetic
+            </button>
+            <a href="../u/xox.html" target="_blank" class="border border-border/80 bg-background/80 shadow-xs hover:bg-accent hover:text-accent-foreground inline-flex items-center justify-center gap-1.5 rounded-md text-xs font-semibold h-8 px-3 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              Preview Profile
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Floating Preview Profile Tab (Exact match to screenshots 6-10 right edge) -->
+    <a href="../u/xox.html" target="_blank" class="fixed top-1/2 right-0 z-40 flex -translate-y-1/2 items-center rounded-l-lg bg-white text-black px-2.5 py-6 shadow-2xl transition-all hover:bg-neutral-200" aria-label="Open profile preview">
+      <span style="writing-mode: vertical-rl; text-orientation: mixed;" class="text-[11px] font-semibold tracking-wider select-none">Preview Profile</span>
+    </a>
+
+    <!-- Page Content Area -->
+    <div class="flex flex-1 flex-col">
+      <div class="container-main flex flex-1 flex-col gap-2">
+        <div class="flex flex-col gap-6 px-4 py-6 lg:px-8 max-w-5xl">
+          
+          <div>
+            <h2 class="text-2xl font-bold tracking-tight">Cosmetics</h2>
+            <p class="text-muted-foreground text-sm mt-0.5">Activate and customize your profile cosmetics</p>
+          </div>
+
+          <!-- COSMETIC CARD 1: Avatar Frame (Screenshots 6 & 9) -->
+          <div data-cosmetic="avatar_frame" class="bg-[#121212] rounded-xl border border-[#222222] p-5 shadow-sm space-y-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="flex items-center gap-2">
+                  <h3 class="font-bold text-base text-foreground">Avatar Frame</h3>
+                  <span class="active-badge inline-flex items-center gap-1 rounded-md border border-neutral-700/80 bg-neutral-800/90 px-2 py-0.5 text-xs font-medium text-neutral-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Active
+                  </span>
+                </div>
+                <p class="text-muted-foreground text-xs mt-0.5">Customize your avatar frame</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="status-label text-xs font-medium text-muted-foreground">Enabled</span>
+                <button type="button" class="switch-track switch-on" aria-label="Toggle Avatar Frame">
+                  <span class="switch-thumb"></span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Fields -->
+            <div class="space-y-4 pt-1">
+              <div class="space-y-1.5 relative">
+                <label class="text-xs font-medium text-foreground">Frame</label>
+                <button type="button" class="custom-select-btn" onclick="toggleDropdown('frame-dropdown')">
+                  <span id="selected-frame-text">WHITE</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div id="frame-dropdown" class="custom-dropdown hidden">
+                  <div class="custom-dropdown-item" onclick="selectOption('frame', 'BLACK')"><span>BLACK</span></div>
+                  <div class="custom-dropdown-item selected" onclick="selectOption('frame', 'WHITE')">
+                    <span>WHITE</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div class="custom-dropdown-item" onclick="selectOption('frame', 'GRADIENT')">
+                    <span>GRADIENT</span>
+                    <img src="https://ebio.gg/assets/ranks/pro.svg" alt="Pro" class="h-3.5 w-3.5" />
+                  </div>
+                  <div class="custom-dropdown-item" onclick="selectOption('frame', 'SPARKLES')">
+                    <span>SPARKLES</span>
+                    <img src="https://ebio.gg/assets/ranks/premium.svg" alt="Premium" class="h-3.5 w-3.5" />
+                  </div>
+                  <div class="custom-dropdown-item" onclick="selectOption('frame', 'GLOW')">
+                    <span>GLOW</span>
+                    <img src="https://ebio.gg/assets/ranks/premium.svg" alt="Premium" class="h-3.5 w-3.5" />
+                  </div>
+                  <div class="custom-dropdown-item" onclick="selectOption('frame', 'PULSE')">
+                    <span>PULSE</span>
+                    <img src="https://ebio.gg/assets/ranks/premium.svg" alt="Premium" class="h-3.5 w-3.5" />
+                  </div>
+                  <div class="custom-dropdown-item" onclick="selectOption('frame', 'RAINBOW')">
+                    <span>RAINBOW</span>
+                    <img src="https://ebio.gg/assets/ranks/unlimited.svg" alt="Unlimited" class="h-3.5 w-3.5" />
+                  </div>
+                  <div class="custom-dropdown-item" onclick="selectOption('frame', 'SPINNER')">
+                    <span>SPINNER</span>
+                    <img src="https://ebio.gg/assets/ranks/unlimited.svg" alt="Unlimited" class="h-3.5 w-3.5" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Glow Toggle (Screenshot 9) -->
+              <div class="space-y-1.5 pt-1">
+                <label class="text-xs font-medium text-foreground block">Glow</label>
+                <div class="flex items-center gap-2.5">
+                  <button type="button" class="switch-track switch-off" aria-label="Enable Glow">
+                    <span class="switch-thumb"></span>
+                  </button>
+                  <span class="text-xs text-muted-foreground font-medium">Enable Glow</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- COSMETIC CARD 2: Name Display (Screenshot 6) -->
+          <div data-cosmetic="name_display" class="bg-[#121212] rounded-xl border border-[#222222] p-5 shadow-sm space-y-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="flex items-center gap-2">
+                  <h3 class="font-bold text-base text-foreground">Name Display</h3>
+                  <span class="active-badge inline-flex items-center gap-1 rounded-md border border-neutral-700/80 bg-neutral-800/90 px-2 py-0.5 text-xs font-medium text-neutral-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Active
+                  </span>
+                </div>
+                <p class="text-muted-foreground text-xs mt-0.5">Customize your name display</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="status-label text-xs font-medium text-muted-foreground">Enabled</span>
+                <button type="button" class="switch-track switch-on" aria-label="Toggle Name Display">
+                  <span class="switch-thumb"></span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Fields -->
+            <div class="space-y-4 pt-1">
+              <div class="space-y-1.5 relative">
+                <label class="text-xs font-medium text-foreground">Font</label>
+                <button type="button" class="custom-select-btn" onclick="toggleDropdown('font-dropdown')">
+                  <span id="selected-font-text">MONO</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div id="font-dropdown" class="custom-dropdown hidden">
+                  <div class="custom-dropdown-item" onclick="selectOption('font', 'DEFAULT')"><span>DEFAULT</span></div>
+                  <div class="custom-dropdown-item" onclick="selectOption('font', 'SERIF')"><span>SERIF</span></div>
+                  <div class="custom-dropdown-item selected" onclick="selectOption('font', 'MONO')">
+                    <span>MONO</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Color Field with Swatch -->
+              <div class="space-y-1.5">
+                <label class="text-xs font-medium text-foreground">Color</label>
+                <div class="flex items-center gap-2">
+                  <input type="text" id="name-color-input" value="#FFFFFF" class="bg-[#111111] border border-[#262626] rounded-lg px-3.5 py-2 text-xs font-mono text-foreground flex-1 outline-none uppercase" />
+                  <label class="relative cursor-pointer">
+                    <input type="color" id="name-color-picker" value="#ffffff" class="sr-only" onchange="document.getElementById('name-color-input').value = this.value.toUpperCase(); document.getElementById('name-color-swatch').style.backgroundColor = this.value;" />
+                    <div id="name-color-swatch" class="h-9 w-9 rounded-lg border border-[#333333] bg-[#ffffff] shadow-inner"></div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- COSMETIC CARD 3: Verified Badge (Screenshot 7) -->
+          <div data-cosmetic="premium_verified_badge" class="bg-[#121212] rounded-xl border border-[#222222] p-5 shadow-sm space-y-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <img src="https://ebio.gg/assets/ranks/premium.svg" alt="Premium" class="h-3.5 w-auto" />
+                  <h3 class="font-bold text-base text-foreground">Verified Badge</h3>
+                  <span class="active-badge hidden inline-flex items-center gap-1 rounded-md border border-neutral-700/80 bg-neutral-800/90 px-2 py-0.5 text-xs font-medium text-neutral-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Active
+                  </span>
+                </div>
+                <p class="text-muted-foreground text-xs mt-0.5">Customize your verified badge</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="status-label text-xs font-medium text-muted-foreground">Disabled</span>
+                <button type="button" class="switch-track switch-off" aria-label="Toggle Verified Badge">
+                  <span class="switch-thumb"></span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Free Unlocked Banner (Replaces paywall banner per "make all premium features free") -->
+            <div class="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="h-6 w-11 rounded-md bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center font-bold text-[10px] text-emerald-400">ebio</div>
+                <div>
+                  <h4 class="text-xs font-semibold text-emerald-300">Premium Cosmetic Unlocked</h4>
+                  <p class="text-[11px] text-emerald-400/80">All verified badges are 100% free & un-gated for your workspace.</p>
+                </div>
+              </div>
+              <span class="text-xs font-bold text-emerald-400 px-2.5 py-1 rounded bg-emerald-500/20 border border-emerald-500/30">Free & Active</span>
+            </div>
+
+            <!-- Fields -->
+            <div class="space-y-4 pt-1">
+              <div class="space-y-1.5 relative">
+                <label class="text-xs font-medium text-foreground">Badge</label>
+                <button type="button" class="custom-select-btn" onclick="toggleDropdown('badge-dropdown')">
+                  <span id="selected-badge-text">Select Badge</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div id="badge-dropdown" class="custom-dropdown hidden">
+                  <div class="custom-dropdown-item" onclick="selectOption('badge', 'Premium Icon')">
+                    <span>Premium Icon</span>
+                    <img src="https://ebio.gg/assets/ranks/premium.svg" alt="Premium" class="h-3.5 w-auto" />
+                  </div>
+                  <div class="custom-dropdown-item" onclick="selectOption('badge', 'Verified Icon')">
+                    <span>Verified Icon</span>
+                    <img src="https://ebio.gg/assets/ranks/unlimited.svg" alt="Unlimited" class="h-3.5 w-auto" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- COSMETIC CARD 4: Sparkles (Screenshot 7) -->
+          <div data-cosmetic="premium_sparkles" class="bg-[#121212] rounded-xl border border-[#222222] p-5 shadow-sm space-y-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <img src="https://ebio.gg/assets/ranks/premium.svg" alt="Premium" class="h-3.5 w-auto" />
+                  <h3 class="font-bold text-base text-foreground">Sparkles</h3>
+                  <span class="active-badge hidden inline-flex items-center gap-1 rounded-md border border-neutral-700/80 bg-neutral-800/90 px-2 py-0.5 text-xs font-medium text-neutral-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Active
+                  </span>
+                </div>
+                <p class="text-muted-foreground text-xs mt-0.5">Customize your sparkles</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="status-label text-xs font-medium text-muted-foreground">Disabled</span>
+                <button type="button" class="switch-track switch-off" aria-label="Toggle Sparkles">
+                  <span class="switch-thumb"></span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Fields -->
+            <div class="space-y-4 pt-1">
+              <div class="space-y-1.5 relative">
+                <label class="text-xs font-medium text-foreground">Color</label>
+                <button type="button" class="custom-select-btn" onclick="toggleDropdown('sparkles-dropdown')">
+                  <span id="selected-sparkles-text">Select Color</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div id="sparkles-dropdown" class="custom-dropdown hidden">
+                  <div class="custom-dropdown-item" onclick="selectOption('sparkles', 'Sparkle Blue')"><span>Sparkle Blue</span></div>
+                  <div class="custom-dropdown-item" onclick="selectOption('sparkles', 'Sparkle Green')"><span>Sparkle Green</span></div>
+                  <div class="custom-dropdown-item" onclick="selectOption('sparkles', 'Sparkle Pink')"><span>Sparkle Pink</span></div>
+                  <div class="custom-dropdown-item" onclick="selectOption('sparkles', 'Sparkle Red')"><span>Sparkle Red</span></div>
+                  <div class="custom-dropdown-item" onclick="selectOption('sparkles', 'Sparkle Yellow')"><span>Sparkle Yellow</span></div>
+                  <div class="custom-dropdown-item" onclick="selectOption('sparkles', 'Sparkle Black')"><span>Sparkle Black</span></div>
+                  <div class="custom-dropdown-item" onclick="selectOption('sparkles', 'Sparkle White')"><span>Sparkle White</span></div>
+                  <div class="custom-dropdown-item" onclick="selectOption('sparkles', 'Sparkle Rainbow')">
+                    <span>Sparkle Rainbow</span>
+                    <img src="https://ebio.gg/assets/ranks/unlimited.svg" alt="Unlimited" class="h-3.5 w-auto" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- COSMETIC CARD 5: Weather (Screenshot 7) -->
+          <div data-cosmetic="pro_weather" class="bg-[#121212] rounded-xl border border-[#222222] p-5 shadow-sm space-y-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <img src="https://ebio.gg/assets/ranks/pro.svg" alt="Pro" class="h-3.5 w-auto" />
+                  <h3 class="font-bold text-base text-foreground">Weather</h3>
+                  <span class="active-badge hidden inline-flex items-center gap-1 rounded-md border border-neutral-700/80 bg-neutral-800/90 px-2 py-0.5 text-xs font-medium text-neutral-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Active
+                  </span>
+                </div>
+                <p class="text-muted-foreground text-xs mt-0.5">Customize your weather</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="status-label text-xs font-medium text-muted-foreground">Disabled</span>
+                <button type="button" class="switch-track switch-off" aria-label="Toggle Weather">
+                  <span class="switch-thumb"></span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Fields -->
+            <div class="space-y-4 pt-1">
+              <div class="space-y-1.5 relative">
+                <label class="text-xs font-medium text-foreground">Weather</label>
+                <button type="button" class="custom-select-btn" onclick="toggleDropdown('weather-dropdown')">
+                  <span id="selected-weather-text">Select Weather</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div id="weather-dropdown" class="custom-dropdown hidden">
+                  <div class="custom-dropdown-item" onclick="selectOption('weather', 'Rain')"><span>Rain</span></div>
+                  <div class="custom-dropdown-item" onclick="selectOption('weather', 'Snow')"><span>Snow</span></div>
+                  <div class="custom-dropdown-item" onclick="selectOption('weather', 'Thunder')"><span>Thunder</span></div>
+                  <div class="custom-dropdown-item" onclick="selectOption('weather', 'Autumn')"><span>Autumn</span></div>
+                  <div class="custom-dropdown-item" onclick="selectOption('weather', 'Starnight')">
+                    <span>Starnight</span>
+                    <img src="https://ebio.gg/assets/ranks/unlimited.svg" alt="Unlimited" class="h-3.5 w-auto" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- COSMETIC CARD 6: Cursor (Screenshots 8 & 10) -->
+          <div data-cosmetic="cursor" class="bg-[#121212] rounded-xl border border-[#222222] p-5 shadow-sm space-y-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="flex items-center gap-2">
+                  <h3 class="font-bold text-base text-foreground">Cursor</h3>
+                  <span class="active-badge inline-flex items-center gap-1 rounded-md border border-neutral-700/80 bg-neutral-800/90 px-2 py-0.5 text-xs font-medium text-neutral-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Active
+                  </span>
+                </div>
+                <p class="text-muted-foreground text-xs mt-0.5">Customize your cursor</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="status-label text-xs font-medium text-muted-foreground">Enabled</span>
+                <button type="button" class="switch-track switch-on" aria-label="Toggle Cursor">
+                  <span class="switch-thumb"></span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Fields -->
+            <div class="space-y-4 pt-1">
+              <div class="space-y-1.5 relative">
+                <label class="text-xs font-medium text-foreground">Cursor Type</label>
+                <button type="button" class="custom-select-btn" onclick="toggleDropdown('cursor-type-dropdown')">
+                  <span id="selected-cursor-type-text">preset</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div id="cursor-type-dropdown" class="custom-dropdown hidden">
+                  <div class="custom-dropdown-item selected" onclick="selectOption('cursor-type', 'preset')">
+                    <span>preset</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div class="custom-dropdown-item" onclick="selectOption('cursor-type', 'custom')">
+                    <span>custom</span>
+                    <img src="https://ebio.gg/assets/ranks/premium.svg" alt="Premium" class="h-3.5 w-auto" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cursor Custom File Upload (Screenshot 8) -->
+              <div class="space-y-1.5">
+                <div class="flex items-center gap-1.5">
+                  <img src="https://ebio.gg/assets/ranks/premium.svg" alt="Premium" class="h-3 w-auto" />
+                  <label class="text-xs font-medium text-foreground">Cursor Custom</label>
+                </div>
+                <label class="border border-[#262626] bg-[#111111] hover:bg-[#181818] rounded-lg px-4 py-2.5 flex items-center justify-center cursor-pointer text-xs font-semibold text-foreground transition-colors">
+                  <input type="file" class="sr-only" accept=".png,.cur,.ico" onchange="showCosmeticsToast('Custom cursor uploaded!')" />
+                  Choose File
+                </label>
+              </div>
+
+              <!-- Cursor Preset Dropdown (Screenshots 8 & 10) -->
+              <div class="space-y-1.5 relative">
+                <label class="text-xs font-medium text-foreground">Cursor Preset</label>
+                <button type="button" class="custom-select-btn" onclick="toggleDropdown('preset-dropdown')">
+                  <span id="selected-preset-text">CARAMBIT</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div id="preset-dropdown" class="custom-dropdown hidden">
+                  <div class="custom-dropdown-item" onclick="selectOption('preset', 'DEFAULT')"><span>DEFAULT</span></div>
+                  <div class="custom-dropdown-item" onclick="selectOption('preset', 'CROSS')"><span>CROSS</span></div>
+                  <div class="custom-dropdown-item selected" onclick="selectOption('preset', 'CARAMBIT')">
+                    <span>CARAMBIT</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div class="custom-dropdown-item" onclick="selectOption('preset', 'HEART')"><span>HEART</span></div>
+                </div>
+              </div>
+
+              <!-- Particle Enabled Toggle (Screenshot 8) -->
+              <div class="space-y-1.5 pt-1">
+                <label class="text-xs font-medium text-foreground block">Particle Enabled</label>
+                <div class="flex items-center gap-2.5">
+                  <button type="button" class="switch-track switch-off" aria-label="Enable Particle Enabled">
+                    <span class="switch-thumb"></span>
+                  </button>
+                  <span class="text-xs text-muted-foreground font-medium">Enable Particle Enabled</span>
+                </div>
+              </div>
+
+              <!-- Particle Color Field with Swatch (Screenshot 8) -->
+              <div class="space-y-1.5">
+                <label class="text-xs font-medium text-foreground">Particle Color</label>
+                <div class="flex items-center gap-2">
+                  <input type="text" id="particle-color-input" value="#ffffff" class="bg-[#111111] border border-[#262626] rounded-lg px-3.5 py-2 text-xs font-mono text-foreground flex-1 outline-none" />
+                  <label class="relative cursor-pointer">
+                    <input type="color" id="particle-color-picker" value="#ffffff" class="sr-only" onchange="document.getElementById('particle-color-input').value = this.value; document.getElementById('particle-color-swatch').style.backgroundColor = this.value;" />
+                    <div id="particle-color-swatch" class="h-9 w-9 rounded-lg border border-[#333333] bg-[#ffffff] shadow-inner"></div>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+</div>
+</div>
+
+<div id="cosmetics-toast" class="fixed bottom-6 right-6 z-50 transform transition-all duration-300 translate-y-20 opacity-0 pointer-events-none bg-emerald-500 text-white text-sm font-medium px-4 py-2.5 rounded-lg shadow-xl flex items-center gap-2">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+  <span>Cosmetics updated!</span>
+</div>
+
+<script src="../assets/js/clone.js"></script>
+<script>
+const toast = document.getElementById('cosmetics-toast');
+
+function showCosmeticsToast(msg) {
+  if (msg) toast.querySelector('span').textContent = msg;
+  toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+  setTimeout(() => {
+    toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+  }, 2500);
+}
+
+function toggleDropdown(id) {
+  const el = document.getElementById(id);
+  document.querySelectorAll('.custom-dropdown').forEach(d => {
+    if (d.id !== id) d.classList.add('hidden');
+  });
+  el.classList.toggle('hidden');
+}
+
+function selectOption(category, val) {
+  const dropdown = event.target.closest('.custom-dropdown');
+  if (dropdown) {
+    dropdown.querySelectorAll('.custom-dropdown-item').forEach(item => item.classList.remove('selected'));
+    const targetItem = event.target.closest('.custom-dropdown-item');
+    if (targetItem) targetItem.classList.add('selected');
+    dropdown.classList.add('hidden');
+  }
+  const labelEl = document.getElementById('selected-' + category + '-text');
+  if (labelEl) labelEl.textContent = val;
+  showCosmeticsToast(category.replace('-', ' ') + ' set to ' + val);
+}
+
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.relative') && !e.target.closest('.custom-select-btn')) {
+    document.querySelectorAll('.custom-dropdown').forEach(d => d.classList.add('hidden'));
+  }
+});
+
+// Toggle switches
+document.querySelectorAll('.switch-track').forEach(track => {
+  track.addEventListener('click', () => {
+    const isOn = track.classList.contains('switch-on');
+    track.classList.toggle('switch-on', !isOn);
+    track.classList.toggle('switch-off', isOn);
+    
+    const card = track.closest('[data-cosmetic]');
+    if (card) {
+      const label = card.querySelector('.status-label');
+      const badge = card.querySelector('.active-badge');
+      if (label) label.textContent = !isOn ? 'Enabled' : 'Disabled';
+      if (badge) badge.classList.toggle('hidden', isOn);
+      showCosmeticsToast((!isOn ? 'Activated ' : 'Deactivated ') + card.querySelector('h3').textContent);
+    }
+  });
+});
+</script>
+</body>
+</html>

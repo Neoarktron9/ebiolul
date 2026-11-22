@@ -1,0 +1,26 @@
+/* verbatim from _app/immutable/assets/profile-renderer.DZOebmRz.css (rain/snow/leaf/star overlays, module cards, blur theme) */
+.rain-overlay{background:linear-gradient(to bottom,rgba(0,0,0,.1) 0%,transparent 100%);overflow:hidden}
+.raindrop{position:absolute;width:2px;height:20px;background:linear-gradient(to bottom,#fff9,#fff3);animation:rain-fall linear infinite;top:-20px}
+@keyframes rain-fall{0%{transform:translateY(0);opacity:1}to{transform:translateY(100vh);opacity:0}}
+.snow-overlay{background:linear-gradient(to bottom,rgba(255,255,255,.02) 0%,transparent 100%);overflow:hidden}
+.snowflake{position:absolute;color:#fffc;animation:snow-fall linear infinite;user-select:none}
+.snowflake:before{content:"\2744"}
+@keyframes snow-fall{0%{transform:translateY(-100px) rotate(0);opacity:.8}to{transform:translateY(calc(100vh + 100px)) rotate(360deg);opacity:0}}
+.autumn-overlay{background:linear-gradient(to bottom,rgba(217,119,6,.05) 0%,transparent 100%);overflow:hidden}
+.leaf{position:absolute;top:-30px;animation:leaf-fall linear infinite;opacity:.7}
+@keyframes leaf-fall{0%{transform:translateY(0) translate(0) rotate(0);opacity:.7}50%{transform:translateY(50vh) translate(50px) rotate(180deg);opacity:.5}to{transform:translateY(100vh) translate(-30px) rotate(360deg);opacity:0}}
+.starnight-overlay{background:transparent;overflow:hidden}
+.star{position:absolute;display:flex;align-items:center;justify-content:center;animation:star-twinkle linear infinite;pointer-events:none}
+@keyframes star-twinkle{0%,to{opacity:.3;transform:scale(1) rotate(var(--star-rotation,0deg))}50%{opacity:.8;transform:scale(1.2) rotate(var(--star-rotation,0deg))}}
+.module-scroll-container::-webkit-scrollbar{width:8px;background:transparent}
+.module-scroll-container::-webkit-scrollbar-thumb{background:#fff3;border-radius:4px}
+.module-scroll-container::-webkit-scrollbar-thumb:hover{background:#ffffff4d}
+.module-fade-overlay{position:sticky;bottom:0;left:0;right:0;height:40px;pointer-events:none;mask-image:linear-gradient(to top,black 0%,black 50%,transparent 100%);-webkit-mask-image:linear-gradient(to top,black 0%,black 50%,transparent 100%);z-index:10}
+.module-card{background-color:#ffffff14;border:1px solid rgb(255 255 255 / 6%);border-radius:7px}
+.blur-plate{background:linear-gradient(120deg,color-mix(in srgb,var(--profile-accent,#ffc482) 12%,transparent),color-mix(in srgb,var(--profile-accent,#82f7ff) 12%,transparent)),color-mix(in srgb,var(--profile-card,rgba(255,255,255,.05)) 100%,transparent);border:1px solid color-mix(in srgb,var(--profile-border,rgba(255,255,255,.08)) 100%,transparent)}
+.grain{background-image:radial-gradient(1px 1px at 10% 20%,color-mix(in srgb,var(--profile-foreground,rgba(255,255,255,.1)) 100%,transparent),transparent 40%),radial-gradient(1px 1px at 70% 60%,color-mix(in srgb,var(--profile-foreground,rgba(255,255,255,.08)) 100%,transparent),transparent 40%)}
+.pane:after{content:"";position:absolute;top:4px;right:4px;bottom:4px;left:4px;border-radius:26px;border:1px solid color-mix(in srgb,var(--profile-border,rgba(255,255,255,.06)) 100%,transparent);pointer-events:none}
+.accent-bar{background:linear-gradient(180deg,var(--profile-accent,#ffc482),var(--profile-accent,#82f7ff))}
+@media (prefers-reduced-motion:no-preference){.pane{animation:descend .8s cubic-bezier(.18,.8,.2,1) forwards}.accent-bar{animation:pulse-bar 2.6s ease-in-out infinite}}
+@keyframes descend{0%{transform:translateY(-28px) scale(.98);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}
+@keyframes pulse-bar{0%,to{filter:drop-shadow(0 0 14px color-mix(in srgb,var(--profile-accent,rgba(141,243,255,.4)) 100%,transparent))}50%{filter:drop-shadow(0 0 24px color-mix(in srgb,var(--profile-accent,rgba(246,242,192,.6)) 100%,transparent))}}

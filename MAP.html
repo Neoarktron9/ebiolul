@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ebio.gg clone — source map</title>
+<style>
+  :root{--bg:#111;--fg:#eee;--dim:#999;--line:#2a2a2a;--accent:#ff6a1f;--ok:#34d399;--warn:#fbbf24;--bad:#f87171}
+  body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;padding:40px 20px}
+  .wrap{max-width:860px;margin:0 auto}
+  h1{font-size:22px;letter-spacing:-.02em;margin:0 0 6px}
+  .sub{color:var(--dim);font-size:13px;margin-bottom:28px}
+  .entry{border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:14px;background:#151515}
+  .head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+  .file{font-size:14px;font-weight:600;color:var(--accent)}
+  .route{font-size:12px;color:var(--dim)}
+  .tag{font-size:10px;text-transform:uppercase;letter-spacing:.08em;padding:2px 7px;border-radius:99px;border:1px solid var(--line);color:var(--dim)}
+  .tag.verbatim{color:var(--ok);border-color:#065f46}
+  .tag.partial{color:var(--warn);border-color:#78350f}
+  .tag.none{color:var(--bad);border-color:#7f1d1d}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{text-align:left;color:var(--dim);font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.07em;padding:4px 8px 4px 0;border-bottom:1px solid var(--line)}
+  td{padding:7px 8px 7px 0;border-bottom:1px solid #1e1e1e;vertical-align:top}
+  td:first-child{width:42%;color:var(--fg)}
+  td:nth-child(2){width:30%;color:var(--accent)}
+  td:last-child{color:var(--dim);font-size:12px}
+  .note{color:var(--dim);font-size:12px;margin-top:10px}
+  h2{font-size:15px;margin:34px 0 10px;padding-top:20px;border-top:1px solid var(--line)}
+  code{background:#1e1e1e;padding:1px 5px;border-radius:4px;font-size:12px}
+  .built li{margin-bottom:5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>ebio.gg clone — source map</h1>
+  <p class="sub">10 captures in <code>Neoarktron9/ebiolul</code> @ <code>bf0d54c</code>, mapped to the file each one feeds. Read top to bottom; every row is a copy instruction.</p>
+
+  <div class="entry">
+    <div class="head"><span class="file">ebio.json</span><span class="route">GET /dashboard/overview</span><span class="tag verbatim">verbatim</span></div>
+    <table>
+      <tr><th>Region in capture</th><th>→ Destination</th><th>Notes</th></tr>
+      <tr><td><code>content.text</code> head block</td><td>dashboard/overview.html <code>&lt;head&gt;</code></td><td>mode-watcher bootstrap, noindex, og-default card, canonical</td></tr>
+      <tr><td>logo <code>&lt;svg viewBox="0 0 448 451"&gt;</code></td><td>sidebar brand mark</td><td>two paths, fill white</td></tr>
+      <tr><td><code>#workspace-select</code> block</td><td>sidebar workspace field</td><td>includes <code>__add__</code> option</td></tr>
+      <tr><td>nav groups General / Customization</td><td>sidebar nav</td><td>tabler icons: dashboard, chart-bar, briefcase</td></tr>
+      <tr><td><code>&lt;body style="background-color:#111"&gt;</code></td><td>page body</td><td>keep inline</td></tr>
+      <tr><td><code>link:</code> preload header</td><td>assets/css/*</td><td>source of all 5 stylesheet names</td></tr>
+    </table>
+  </div>
+
+  <div class="entry">
+    <div class="head"><span class="file">ebio2.json</span><span class="route">overview + /dashboard/workspace</span><span class="tag verbatim">verbatim</span></div>
+    <table>
+      <tr><th>Region</th><th>→ Destination</th><th>Notes</th></tr>
+      <tr><td>page_2 document <code>content.text</code></td><td>dashboard/workspace.html</td><td>settings form, visibility toggles</td></tr>
+      <tr><td>upload-limit rows</td><td>workspace → Uploads card</td><td>2 MB avatar, 5 MB background</td></tr>
+      <tr><td>custom-domain row</td><td>workspace → Custom domain card</td><td>gated behind UNLIMITED</td></tr>
+    </table>
+    <p class="note">Cumulative capture — it re-sends the overview document first, then the workspace document.</p>
+  </div>
+
+  <div class="entry">
+    <div class="head"><span class="file">ebio3.json</span><span class="route">same two routes</span><span class="tag partial">inventory</span></div>
+    <table>
+      <tr><th>Region</th><th>→ Destination</th><th>Notes</th></tr>
+      <tr><td>chunk request list</td><td>docs/CHUNKS.txt</td><td>duplicate markup, unique hash set</td></tr>
+    </table>
+    <p class="note">No new markup. Useful only to enumerate the immutable chunk graph.</p>
+  </div>
+
+  <div class="entry">
+    <div class="head"><span class="file">ebio4.json</span><span class="route">theme chunks</span><span class="tag partial">partial</span></div>
+    <table>
+      <tr><th>Region</th><th>→ Destination</th><th>Notes</th></tr>
+      <tr><td>theme modules</td><td>assets/css/themes/*.css</td><td>3d-profile, bento, bloomberg, blur, default, og-ebio</td></tr>
+      <tr><td>profile CSS vars</td><td>assets/css/themes/_tokens.css</td><td>--profile-accent, --profile-card, --profile-border</td></tr>
+    </table>
+  </div>
+
+  <div class="entry">
+    <div class="head"><span class="file">ebio5.json</span><span class="route">primitives + fonts + ranks</span><span class="tag partial">partial</span></div>
+    <table>
+      <tr><th>Region</th><th>→ Destination</th><th>Notes</th></tr>
+      <tr><td>Bits UI menu/dialog/tooltip/slider/avatar/separator</td><td>assets/js/bits/*.js</td><td>vendored primitives</td></tr>
+      <tr><td>Poppins.ttf, -Medium, -SemiBold, -Bold</td><td>assets/fonts/</td><td>@font-face + preload</td></tr>
+      <tr><td>pro.svg / premium.svg / unlimited.svg</td><td>assets/ranks/</td><td>pricing + billing badges</td></tr>
+    </table>
+  </div>
+
+  <div class="entry">
+    <div class="head"><span class="file">ebio6.json</span><span class="route">env + module registry</span><span class="tag verbatim">config</span></div>
+    <table>
+      <tr><th>Region</th><th>→ Destination</th><th>Notes</th></tr>
+      <tr><td>PUBLIC_SUPABASE_URL / PUBLIC_MODULES_API_URL</td><td>.env</td><td>db.ebio.gg, api.ebio.gg</td></tr>
+      <tr><td>PUBLIC_STRIPE_MODE, Turnstile key</td><td>.env</td><td>live mode</td></tr>
+      <tr><td>module-type map</td><td>assets/js/modules/registry.js</td><td>anilist_profile, apple_music, chess_profile, discord_server, github_commits, spotify, steam_profile, valorant_profile</td></tr>
+    </table>
+  </div>
+
+  <div class="entry">
+    <div class="head"><span class="file">ebio7.json</span><span class="route">music player</span><span class="tag partial">partial</span></div>
+    <table>
+      <tr><th>Region</th><th>→ Destination</th><th>Notes</th></tr>
+      <tr><td>player component + waveform markup</td><td>assets/js/modules/music-player.js</td><td>play/pause, seek, marquee title</td></tr>
+    </table>
+  </div>
+
+  <div class="entry">
+    <div class="head"><span class="file">ebio8.json</span><span class="route">/api/workspaces/get</span><span class="tag verbatim">data</span></div>
+    <table>
+      <tr><th>Region</th><th>→ Destination</th><th>Notes</th></tr>
+      <tr><td>workspace object</td><td>data/workspace.json</td><td>cee740f3386446c, slug xox, name xxx, Free, public</td></tr>
+      <tr><td>user object</td><td>data/user.json</td><td>ae70eeae-…, wlqihp1vnmcoojgspyp#0, permission_level 0</td></tr>
+    </table>
+  </div>
+
+  <div class="entry">
+    <div class="head"><span class="file">ebio9.json</span><span class="route">/dashboard/analytics/__data.json</span><span class="tag none">403</span></div>
+    <table>
+      <tr><th>Region</th><th>→ Destination</th><th>Notes</th></tr>
+      <tr><td>error body "Analytics unavailable for this workspace"</td><td>dashboard/analytics.html</td><td>render empty-state, not a chart</td></tr>
+    </table>
+  </div>
+
+  <div class="entry">
+    <div class="head"><span class="file">ebio10.json</span><span class="route">static asset responses</span><span class="tag none">headers only</span></div>
+    <table>
+      <tr><th>Region</th><th>→ Destination</th><th>Notes</th></tr>
+      <tr><td>HTTP/3, cf-cache-status, immutable cache-control</td><td>docs/HEADERS.md</td><td>deploy config reference</td></tr>
+      <tr><td>timing metrics</td><td>docs/HEADERS.md</td><td>no bodies captured</td></tr>
+    </table>
+  </div>
+
+  <h2>Built so far</h2>
+  <ul class="built">
+    <li><code>index.html</code> — landing, full copy verbatim from capture</li>
+    <li><code>pricing.html</code> — tiers, FAQ, footer</li>
+    <li><code>u/xox.html</code> — public profile, empty state</li>
+    <li><code>dashboard/overview.html</code> — 1:1 official SvelteKit DOM shell, 8 interactive section cards &amp; preview profile trigger</li>
+    <li><code>dashboard/analytics.html</code> — fully unlocked live analytics, charts &amp; referrers</li>
+    <li><code>dashboard/workspace.html</code> — settings, custom domain &amp; max upload quotas unlocked</li>
+    <li><code>dashboard/themes.html</code> — themes catalog (Default, Blur, Bento, Bloomberg, 3D, OG)</li>
+    <li><code>dashboard/colors.html</code> — palette, background, opacity &amp; radius sliders</li>
+    <li><code>dashboard/modules.html</code> — module registry (Lichess, Steam, osu!, Valorant, Spotify, GitHub, Discord, AniList)</li>
+    <li><code>dashboard/cosmetics.html</code> — avatar frames, weather FX, audio loop toggle</li>
+    <li><code>dashboard/socials.html</code> — 31 connected platforms (Discord, Guns.lol, Feds.lol, Telegram, Crypto, Kick, etc.) with interactive modal &amp; style selector</li>
+    <li><code>dashboard/share.html</code> — profile URL, QR code generator &amp; embed badge</li>
+    <li><code>dashboard/affiliate.html</code> — 25% recurring affiliate tracker &amp; payout settings</li>
+    <li><code>dashboard/billing.html</code> — tier upgrades, plan limits &amp; invoices</li>
+    <li><code>dashboard/account.html</code> — user credentials, 2FA, OAuth providers &amp; deletion</li>
+    <li><code>assets/css/</code> — exact fetched bundles (<code>0.C2bWUDFM.css</code>, <code>0.CxO0n-iM.css</code>, <code>StyleProvider</code>, <code>profile-renderer</code>, etc.) + tokens &amp; components</li>
+    <li><code>assets/js/clone.js</code> — theme toggle, sidebar collapse, switches, copy &amp; cookies</li>
+  </ul>
+
+  <h2>Known gaps</h2>
+  <ul class="built">
+    <li>Static mock mode: client-side interaction and state saving operate in-browser without persistent backend database.</li>
+  </ul>
+</div>
+</body>
+</html>

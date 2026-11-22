@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+<meta charset="utf-8" />
+<link rel="icon" type="image/png" href="https://ebio.gg/assets/img/favicon.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>xxx on ebio</title>
+<meta name="description" content="xxx on ebio" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://ebio.gg/xox" />
+<meta name="theme-color" content="#000000" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ebio.gg/xox" />
+<meta property="og:title" content="xxx on ebio" />
+<meta property="og:description" content="xxx on ebio" />
+<meta property="og:image" content="https://ebio.gg/assets/img/og-default.png" />
+
+<link href="../assets/css/0.C2bWUDFM.css" rel="stylesheet" />
+<link href="../assets/css/StyleProvider.BXnnGwMW.css" rel="stylesheet" />
+<link href="../assets/css/_ModuleRoot.CidXDgXL.css" rel="stylesheet" />
+<link href="../assets/css/profile-renderer.DZOebmRz.css" rel="stylesheet" />
+<link href="../assets/css/tokens.css" rel="stylesheet" />
+
+<style>
+  :root {
+    --profile-background: #000000;
+    --profile-foreground: #ffffff;
+    --profile-card: #141414;
+    --profile-card-foreground: #ffffff;
+    --profile-border: #222222;
+    --profile-primary: #ffffff;
+    --profile-primary-foreground: #000000;
+    --profile-accent: #ff6a1f;
+    --profile-muted-foreground: #888888;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #000000;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: inherit;
+  }
+
+  /* Canvas Particle Trail for Carambit Cosmetic */
+  #particles-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  /* Avatar Frame Exact CSS */
+  .avatar-frame-wrapper { display: inline-flex; position: relative; }
+  .avatar-frame-container { position: relative; display: flex; align-items: center; justify-content: center; }
+  .frame-border {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    border-radius: inherit;
+  }
+  .frame-white .frame-border {
+    box-sizing: border-box;
+    border: var(--border-width, 4px) solid #ffffff;
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.7));
+  }
+  .frame-black .frame-border {
+    box-sizing: border-box;
+    border: var(--border-width, 4px) solid #1a1a1a;
+  }
+  .frame-glow .frame-border {
+    box-sizing: border-box;
+    border: var(--border-width, 4px) solid #ff6a1f;
+    box-shadow: 0 0 20px #ff6a1f, 0 0 35px #ff6a1f, inset 0 0 8px #ff6a1f;
+  }
+  .frame-gradient .frame-border {
+    border: none;
+    background: linear-gradient(135deg, #3b82f6 0%, #ec4899 100%);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+  .avatar-image {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background-color: #161616;
+  }
+  .avatar-slot {
+    width: 100%;
+    height: 100%;
+    background-color: #161616;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Name Title Glow */
+  .profile-name-target {
+    color: #FFFFFF !important;
+    font-family: "Courier New", Courier, monospace !important;
+    text-shadow: 0 0 10px rgba(255,255,255,0.6), 0 0 20px rgba(255,255,255,0.4), 0 0 30px rgba(255,255,255,0.3) !important;
+    letter-spacing: 0.05em;
+  }
+
+  /* Blur Theme Accent Bar Animation */
+  .blur-accent-bar {
+    position: absolute;
+    inset-block: 8px;
+    left: 14px;
+    width: 5px;
+    border-radius: 20px;
+    background: linear-gradient(180deg, #ffc482, #82f7ff);
+    box-shadow: 0 0 16px rgba(130, 247, 255, 0.5);
+    animation: pulse-accent-bar 2.6s ease-in-out infinite;
+  }
+  @keyframes pulse-accent-bar {
+    0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 8px rgba(130,247,255,0.4)); }
+    50% { opacity: 1; filter: drop-shadow(0 0 18px rgba(130,247,255,0.7)); }
+  }
+
+  /* 3D Profile Medium Square Box - Scoped Robust CSS */
+  .box-3d-medium {
+    width: 495px !important;
+    height: 495px !important;
+    max-width: 92vw !important;
+    max-height: 92vw !important;
+    background-color: #1c1917 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 28px !important;
+    padding: 24px 24px !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85) !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    transform-style: preserve-3d !important;
+    transition: transform 0.12s ease-out !important;
+  }
+
+  /* Social Pill */
+  .social-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    font-size: 11px;
+    font-family: inherit;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .social-pill:hover {
+    background: rgba(255, 255, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+  }
+
+  /* Floating Dashboard Return Button */
+  .return-tab {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 100;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(20, 20, 20, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(14px);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    transition: all 0.2s ease;
+  }
+  .return-tab:hover {
+    background: #ffffff;
+    color: #000000;
+    transform: translateY(-2px);
+  }
+</style>
+</head>
+<body data-sveltekit-preload-data="hover">
+<canvas id="particles-canvas"></canvas>
+
+<div style="display: contents">
+  <div data-style-provider="true">
+    <div id="theme-root" class="min-h-screen w-full" style="transition-duration: 500ms; pointer-events: auto;">
+      <!-- Dynamically injected theme layout -->
+    </div>
+  </div>
+</div>
+
+<!-- Return to Dashboard -->
+<a href="../dashboard/themes.html" class="return-tab">
+  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+  <span>Themes</span>
+</a>
+
+<script>
+// THEMES matching official ebio.gg view-source dumps & screenshots 1:1
+const THEMES = {
+  // 1. BLOOMBERG (Screenshot 1)
+  BLOOMBERG: `
+    <div class="relative flex h-screen w-full flex-col font-mono text-profile-foreground antialiased md:flex-row bg-[#000000]">
+      <!-- Left Sidebar (md:w-64) -->
+      <div class="relative z-10 w-full border-b border-[#222222] p-0 md:w-64 md:border-r md:border-b-0 bg-[#000000]">
+        <!-- Header Box -->
+        <div class="border-b border-[#222222] bg-white px-4 py-2">
+          <div class="text-xs font-bold tracking-wider text-black uppercase">PROFILE</div>
+        </div>
+        <!-- Profile info -->
+        <div class="flex items-center gap-4 border-b border-[#222222] p-4 md:block md:gap-0">
+          <div class="avatar-frame-wrapper svelte-j5235y">
+            <div class="avatar-frame-container rounded-sm frame-white svelte-j5235y" style="--border-width: 4px; --avatar-size: 96px; --container-size: 104px;">
+              <div class="avatar-image rounded-sm svelte-j5235y" style="width: 96px; height: 96px;">
+                <div class="avatar-slot w-full h-full rounded-sm svelte-j5235y"></div>
+              </div>
+              <div class="frame-border rounded-sm svelte-j5235y"></div>
+            </div>
+          </div>
+          <div class="flex-1 md:mt-2">
+            <div class="text-sm font-bold text-profile-foreground">
+              <div class="flex items-center gap-2 text-sm">
+                <h1 class="profile-name-target text-3xl font-bold svelte-tdcaal">xxx</h1>
+              </div>
+            </div>
+            <div class="profile-handle-target mt-1 text-xs text-neutral-400">@xox</div>
+            <div class="profile-bio-target mt-1 text-xs text-neutral-400 font-sans" style="display:none;"></div>
+            <div class="profile-socials-target flex flex-wrap gap-1.5 mt-2.5"></div>
+          </div>
+        </div>
+        <!-- Metadata -->
+        <div class="p-4">
+          <div class="mb-2 text-xs font-bold text-white uppercase">METADATA</div>
+          <div class="space-y-1 text-xs">
+            <div class="flex flex-row justify-between"><span class="text-neutral-400">ID</span> <span class="text-neutral-200">cee740f3</span></div>
+            <div class="flex flex-row justify-between"><span class="text-neutral-400">TIER</span> <span class="text-neutral-200">Free</span></div>
+            <div class="flex flex-row justify-between"><span class="text-neutral-400">MODULES</span> <span class="profile-modules-count text-neutral-200">0</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Main Terminal Stream -->
+      <div class="relative z-10 flex flex-1 flex-col bg-[#000000]">
+        <!-- Top Terminal Bar -->
+        <div class="border-b border-[#222222] px-4 py-2 md:px-6 bg-[#000000]">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2 text-xs md:gap-6">
+              <span class="text-white">■</span>
+              <span class="font-bold tracking-wider text-white uppercase">TERMINAL</span>
+              <span class="hidden text-neutral-500 md:inline">|</span>
+              <span id="bloomberg-clock" class="hidden text-neutral-400 md:inline">5:44:05 AM</span>
+            </div>
+            <div class="flex gap-2 text-xs text-neutral-400 md:gap-4">
+              <span class="hidden md:inline">STATUS:</span>
+              <span class="text-white">● <span class="hidden md:inline text-neutral-300">ONLINE</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Terminal Stream Body -->
+        <div class="flex-1 overflow-auto p-4 md:p-6 bg-[#000000]">
+          <div class="mx-auto max-w-6xl">
+            <div class="mb-4 border-b border-[#222222] pb-2">
+              <h1 class="text-xs font-bold tracking-wider text-white uppercase md:text-sm">PROFILE DATA STREAM</h1>
+            </div>
+            <div class="relative z-10 flex w-full flex-col items-center p-3">
+              <div class="profile-modules-target flex w-full max-w-xl flex-col gap-5">
+                <div class="bg-[#121212] text-white border-[#222222] rounded-lg border shadow-sm">
+                  <div class="p-12 text-center">
+                    <p class="text-neutral-400 text-sm">No modules configured for this profile yet.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Terminal Footer Status Bar -->
+        <div class="border-t border-[#222222] px-4 py-2 md:px-6 bg-[#000000]">
+          <div class="flex flex-col gap-2 text-xs text-neutral-400 md:flex-row md:justify-between md:gap-0">
+            <div class="flex flex-wrap gap-2 md:gap-6">
+              <span>SLUG: <span class="profile-slug-target text-white">xox</span></span>
+            </div>
+            <div class="flex gap-4">
+              <span class="text-white">● SYS_OK</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+
+  // 2. OG EBIO (Screenshot 2)
+  'OG-EBIO': `
+    <main class="content-container relative z-10 bg-[#000000] min-h-screen flex items-center justify-center p-4">
+      <div class="flex min-h-screen w-full items-center justify-center">
+        <div class="relative flex h-fit w-[95%] max-w-xl flex-col items-center rounded-2xl bg-[#141414]/60 p-6 pt-24 backdrop-blur-md border border-[#262626]/40 shadow-2xl">
+          <!-- Circular Avatar perched on top edge (-top-24) -->
+          <div class="absolute -top-24 drop-shadow-2xl">
+            <div class="avatar-frame-wrapper svelte-j5235y">
+              <div class="avatar-frame-container rounded-full frame-white svelte-j5235y" style="--border-width: 4px; --avatar-size: 176px; --container-size: 184px;">
+                <div class="avatar-image rounded-full svelte-j5235y" style="width: 176px; height: 176px;">
+                  <div class="avatar-slot w-full h-full rounded-full svelte-j5235y"></div>
+                </div>
+                <div class="frame-border rounded-full svelte-j5235y"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Profile Name & Glow -->
+          <div class="flex items-center gap-2 mt-4 text-2xl font-bold text-white">
+            <h1 class="profile-name-target text-3xl font-bold svelte-tdcaal">xxx</h1>
+          </div>
+          <div class="profile-handle-target mt-1 text-xs text-neutral-400 font-mono">@xox</div>
+          <div class="profile-bio-target mt-2 text-xs text-neutral-300 text-center max-w-md font-sans" style="display:none;"></div>
+          <div class="profile-socials-target flex flex-wrap gap-2 mt-4 justify-center"></div>
+          <!-- Module Container (Empty by default) -->
+          <div class="profile-modules-target w-full flex flex-col gap-4 mt-6" style="display:none;"></div>
+        </div>
+      </div>
+    </main>
+  `,
+
+  // 3. BLUR (Screenshot 3)
+  BLUR: `
+    <div class="relative min-h-screen overflow-hidden bg-[#000000]">
+      <!-- Background Ambient Blur Plate & Grain -->
+      <div class="pointer-events-none fixed inset-0 z-0">
+        <div class="blur-plate absolute top-[6%] left-1/2 h-[88vh] w-[520px] -translate-x-1/2 skew-x-[-3deg] rounded-[36px] opacity-90 blur-[30px] max-md:w-[95vw] max-md:max-w-[520px] md:w-[520px]" style="background: radial-gradient(circle, rgba(130,247,255,0.18) 0%, rgba(200,80,255,0.12) 50%, transparent 80%);"></div>
+        <div class="grain absolute inset-0 opacity-40 mix-blend-screen" style="background-image: radial-gradient(1px 1px at 10% 20%, rgba(255, 255, 255, 0.15) 100%, transparent 40%), radial-gradient(1px 1px at 70% 60%, rgba(255, 255, 255, 0.12) 100%, transparent 40%), radial-gradient(1px 1px at 40% 80%, rgba(255, 255, 255, 0.12) 100%, transparent 40%);"></div>
+      </div>
+
+      <!-- Main Profile Glassmorphic Card -->
+      <main class="relative z-[1] flex min-h-screen w-full items-center justify-center p-4 md:p-[18px]">
+        <section class="pane relative w-full max-w-[540px] overflow-hidden rounded-[28px] border border-white/10 p-[22px] pb-6 font-mono leading-[1.6] backdrop-blur-[24px] backdrop-saturate-[180%] bg-[#121212]/30" style="box-shadow: 0 26px 76px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.2);">
+          <!-- Left Animated Accent Bar -->
+          <div class="blur-accent-bar"></div>
+
+          <header class="relative grid grid-cols-1 items-start gap-4 pl-8 md:pl-[32px]">
+            <!-- Avatar with -2deg tilt & shadow -->
+            <div class="avatar-wrapper h-[120px] w-[120px] -translate-x-1 -rotate-2 overflow-hidden rounded-[28px] p-[5px] shadow-[0_18px_40px_rgba(0,0,0,0.4)] transition-transform duration-[180ms] ease-in-out">
+              <div class="avatar-frame-wrapper svelte-j5235y">
+                <div class="avatar-frame-container rounded-lg frame-white svelte-j5235y" style="--border-width: 4px; --avatar-size: 96px; --container-size: 104px;">
+                  <div class="avatar-image rounded-lg svelte-j5235y" style="width: 96px; height: 96px;">
+                    <div class="avatar-slot w-full h-full rounded-lg svelte-j5235y"></div>
+                  </div>
+                  <div class="frame-border rounded-lg svelte-j5235y"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Identity -->
+            <div class="grid gap-2">
+              <div class="grid gap-1">
+                <div class="flex items-center gap-2 text-white min-w-0 text-[1.48rem] font-extrabold tracking-[0.12em] uppercase">
+                  <h1 class="profile-name-target text-3xl font-bold svelte-tdcaal">xxx</h1>
+                </div>
+                <div class="profile-handle-target text-neutral-400 min-w-0 font-mono text-[0.96rem] tracking-[0.06em]">@xox</div>
+                <div class="profile-bio-target mt-1 text-xs text-neutral-300 font-sans" style="display:none;"></div>
+              </div>
+              <div class="profile-socials-target flex flex-wrap gap-2 mt-2"></div>
+            </div>
+          </header>
+          <!-- Module container (empty by default) -->
+          <div class="profile-modules-target w-full flex flex-col gap-4 mt-6" style="display:none;"></div>
+        </section>
+      </main>
+    </div>
+  `,
+
+  // 4. 3D PROFILE (Exact match to Screenshot 4 - Medium Sized Square Box: 495px x 495px)
+  '3D-PROFILE': `
+    <main style="position: relative; z-index: 10; background-color: #000000; min-height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; padding: 20px;">
+      <div style="perspective: 1000px; display: flex; align-items: center; justify-content: center;">
+        <!-- Medium Sized Square Box (495px x 495px, #1c1917, rounded-28px) -->
+        <div id="tilt-card-container" class="box-3d-medium" style="width: 495px; height: 495px; max-width: 92vw; max-height: 92vw; background: #1c1917; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 28px; padding: 24px; box-sizing: border-box; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85); position: relative; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; transform-style: preserve-3d; transition: transform 0.12s ease-out;">
+          <!-- Top-Left Header Identity -->
+          <div style="display: flex; align-items: center; gap: 14px; width: 100%; transform: translateZ(28px);">
+            <!-- Circular Avatar with glowing white ring -->
+            <div class="avatar-frame-wrapper svelte-j5235y" style="flex-shrink: 0;">
+              <div class="avatar-frame-container rounded-full frame-white svelte-j5235y" style="--border-width: 4px; --avatar-size: 82px; --container-size: 90px; width: 90px; height: 90px;">
+                <div class="avatar-image rounded-full svelte-j5235y" style="width: 82px; height: 82px; border-radius: 50%; overflow: hidden; background: #161616;">
+                  <div class="avatar-slot w-full h-full rounded-full svelte-j5235y" style="width: 100%; height: 100%; border-radius: 50%; background: #161616;"></div>
+                </div>
+                <div class="frame-border rounded-full svelte-j5235y" style="border-radius: 50%; border: 4px solid #ffffff; filter: drop-shadow(0 0 10px rgba(255,255,255,0.7));"></div>
+              </div>
+            </div>
+            <!-- Name & Handle stacked to the right of avatar -->
+            <div style="display: flex; flex-direction: column; justify-content: center;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <h1 class="profile-name-target" style="margin: 0; font-size: 26px; font-weight: bold; color: #FFFFFF; font-family: 'Courier New', Courier, monospace; text-shadow: 0 0 10px rgba(255,255,255,0.6), 0 0 20px rgba(255,255,255,0.4); letter-spacing: 0.05em;">xxx</h1>
+              </div>
+              <div class="profile-handle-target" style="margin-top: 4px; font-size: 13px; color: #999999; font-family: monospace;">@xox</div>
+              <div class="profile-bio-target" style="display: none; margin-top: 4px; font-size: 12px; color: #bbbbbb;"></div>
+              <div class="profile-socials-target" style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;"></div>
+            </div>
+          </div>
+          <!-- Modules area inside 3D card -->
+          <div class="profile-modules-target" style="display: none; width: 100%; flex-direction: column; gap: 12px; margin-top: 24px; flex: 1; transform: translateZ(18px);"></div>
+        </div>
+      </div>
+    </main>
+  `,
+
+  // 5. BENTO (Two-Column Bento Box)
+  BENTO: `
+    <main class="bg-[#000000] relative min-h-screen w-full py-12 px-4">
+      <div class="dots-overlay pointer-events-none fixed inset-0 z-0" style="background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px); background-size: 20px 20px;"></div>
+      <div class="relative z-[60] mx-auto flex min-h-screen w-full max-w-[54rem] flex-col justify-center p-2 md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:p-6">
+        <section id="main-profile-content" class="flex w-full flex-col gap-4 md:flex-row md:items-center md:gap-5">
+          <!-- Left Bento Tile (Hero Card) -->
+          <section class="relative w-full items-start md:mr-[1.2rem] md:w-[45%] md:flex-shrink-0 md:self-center">
+            <section class="relative w-full items-start overflow-hidden rounded-3xl border border-white/10 bg-[#161616]/70 p-6 backdrop-blur-md">
+              <div class="pointer-events-none absolute top-0 left-0 h-16 w-full bg-gradient-to-b from-black/40 to-transparent"></div>
+              <div class="relative mx-auto w-24 flex-shrink-0" style="min-width: 6rem; min-height: 6rem;">
+                <div class="avatar-frame-wrapper svelte-j5235y">
+                  <div class="avatar-frame-container rounded-full frame-white svelte-j5235y" style="--border-width: 4px; --avatar-size: 96px; --container-size: 104px;">
+                    <div class="avatar-image rounded-full svelte-j5235y" style="width: 96px; height: 96px;">
+                      <div class="avatar-slot w-full h-full rounded-full svelte-j5235y"></div>
+                    </div>
+                    <div class="frame-border rounded-full svelte-j5235y"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col mt-4">
+                <div class="relative mx-auto items-center">
+                  <div class="flex justify-center">
+                    <h1 class="profile-name-target text-3xl font-bold svelte-tdcaal">xxx</h1>
+                  </div>
+                </div>
+                <span class="m-auto mt-1 justify-center text-xs text-white opacity-70 font-mono">@xox</span>
+                <div class="profile-bio-target mt-2 text-xs text-neutral-300 text-center font-sans" style="display:none;"></div>
+                <div class="profile-socials-target flex flex-wrap gap-2 mt-4 justify-center"></div>
+              </div>
+            </section>
+          </section>
+          <!-- Right Module Column -->
+          <section class="profile-modules-target w-full md:max-h-[calc(100vh-3rem)] md:w-[55%] md:flex-shrink-0 md:self-center flex flex-col gap-4">
+          </section>
+        </section>
+      </div>
+    </main>
+  `,
+
+  // 6. DEFAULT (Header & Stream)
+  DEFAULT: `
+    <div class="relative min-h-screen bg-[#000000]">
+      <div class="relative z-10 bg-[#141414] border-b border-[#222222]">
+        <div class="container mx-auto px-4 py-8">
+          <div class="flex items-center gap-6">
+            <div class="avatar-frame-wrapper svelte-j5235y">
+              <div class="avatar-frame-container rounded-full frame-white svelte-j5235y" style="--border-width: 4px; --avatar-size: 128px; --container-size: 136px;">
+                <div class="avatar-image rounded-full svelte-j5235y" style="width: 128px; height: 128px;">
+                  <div class="avatar-slot w-full h-full rounded-full svelte-j5235y"></div>
+                </div>
+                <div class="frame-border rounded-full svelte-j5235y"></div>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-2">
+                <h1 class="profile-name-target text-3xl font-bold svelte-tdcaal">xxx</h1>
+              </div>
+              <div class="profile-handle-target mt-1 text-sm text-neutral-400 font-mono">@xox</div>
+              <div class="profile-bio-target mt-2 text-xs text-neutral-300 font-sans" style="display:none;"></div>
+              <div class="profile-socials-target flex flex-wrap gap-2 mt-4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="relative z-10 flex w-full flex-col items-center p-6">
+        <div class="profile-modules-target flex w-full max-w-xl flex-col gap-5">
+          <div class="bg-[#141414] text-white border-[#222222] rounded-lg border shadow-sm p-12 text-center">
+            <p class="text-neutral-400 text-sm">No modules configured for this profile yet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  `
+};
+
+function renderActiveProfileTheme() {
+  const root = document.getElementById('theme-root');
+  if (!root) return;
+
+  // 1. Get Active Theme
+  let activeThemeKey = (localStorage.getItem('ebio_active_theme') || '3D-PROFILE').toUpperCase().replace(/\s+/g, '-');
+  if (!THEMES[activeThemeKey]) activeThemeKey = '3D-PROFILE';
+
+  // Inject Theme HTML
+  root.innerHTML = THEMES[activeThemeKey];
+
+  // 2. Populate User Avatar
+  const avatar = localStorage.getItem('ebio_workspace_avatar');
+  const avatarSlots = document.querySelectorAll('.avatar-slot');
+  avatarSlots.forEach(slot => {
+    if (avatar) {
+      slot.innerHTML = `<img src="${avatar}" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;" />`;
+    } else {
+      slot.innerHTML = '';
+      slot.style.backgroundColor = '#161616';
+    }
+  });
+
+  // 3. Populate Name & Slug & Bio
+  const name = localStorage.getItem('ebio_workspace_name') || 'xxx';
+  const slug = localStorage.getItem('ebio_workspace_slug') || 'xox';
+  const bio = localStorage.getItem('ebio_workspace_bio') || '';
+
+  document.querySelectorAll('.profile-name-target').forEach(el => el.textContent = name);
+  document.querySelectorAll('.profile-handle-target').forEach(el => el.textContent = '@' + slug);
+  document.querySelectorAll('.profile-slug-target').forEach(el => el.textContent = slug);
+  document.querySelectorAll('.profile-bio-target').forEach(el => {
+    if (bio) {
+      el.textContent = bio;
+      el.style.display = 'block';
+    } else {
+      el.style.display = 'none';
+    }
+  });
+
+  // 4. Apply Cosmetics (Frame, Font, Glow)
+  try {
+    const cosmetics = JSON.parse(localStorage.getItem('ebio_cosmetics') || '{}');
+    if (cosmetics.frame) {
+      document.querySelectorAll('.avatar-frame-container').forEach(c => {
+        c.className = c.className.replace(/frame-\w+/g, '') + ' frame-' + cosmetics.frame.toLowerCase();
+      });
+    }
+    if (cosmetics.nameFont) {
+      document.querySelectorAll('.profile-name-target').forEach(el => {
+        el.style.fontFamily = cosmetics.nameFont === 'MONO' ? '"Courier New", Courier, monospace' : 'inherit';
+      });
+    }
+    if (cosmetics.nameColor) {
+      document.querySelectorAll('.profile-name-target').forEach(el => el.style.color = cosmetics.nameColor);
+    }
+  } catch(e) {}
+
+  // 5. Populate Social Links
+  try {
+    const socials = JSON.parse(localStorage.getItem('ebio_user_socials') || '[]');
+    const socialsTargets = document.querySelectorAll('.profile-socials-target');
+    socialsTargets.forEach(target => {
+      target.innerHTML = '';
+      if (!socials || !socials.length) return;
+      socials.forEach(item => {
+        if (!item.enabled && item.enabled !== undefined) return;
+        const pill = document.createElement('a');
+        pill.className = 'social-pill';
+        pill.href = item.val ? (item.val.startsWith('http') ? item.val : 'https://' + item.val) : '#';
+        pill.target = '_blank';
+        pill.innerHTML = `
+          <img src="${item.icon ? (item.icon.startsWith('.') || item.icon.startsWith('/') || item.icon.startsWith('http') ? item.icon : '../assets/socials/default/' + item.id + '.svg') : '../assets/socials/default/' + item.id + '.svg'}" style="width: 14px; height: 14px; object-fit: contain;" onerror="this.style.display='none'" />
+          <span>${item.name || item.id}</span>
+        `;
+        target.appendChild(pill);
+      });
+    });
+  } catch(e) {}
+
+  // 6. Populate Modules
+  try {
+    const modules = JSON.parse(localStorage.getItem('ebio_user_modules') || '[]');
+    const countEl = document.querySelector('.profile-modules-count');
+    if (countEl) countEl.textContent = modules.length;
+
+    const modTargets = document.querySelectorAll('.profile-modules-target');
+    if (modules && modules.length > 0) {
+      modTargets.forEach(target => {
+        target.style.display = 'flex';
+        target.innerHTML = '';
+        modules.forEach(mod => {
+          const card = document.createElement('div');
+          card.className = 'bg-[#141414] border border-[#222222] rounded-xl p-4 shadow-sm flex items-center justify-between text-white';
+          card.innerHTML = `
+            <div class="flex items-center gap-3">
+              <span class="text-sm font-semibold">${mod.name || 'Module'}</span>
+            </div>
+            <span class="text-xs text-neutral-400">${mod.desc || ''}</span>
+          `;
+          target.appendChild(card);
+        });
+      });
+    }
+  } catch(e) {}
+
+  // 7. Apply Background Image
+  const bg = localStorage.getItem('ebio_workspace_background');
+  if (bg) {
+    document.body.style.backgroundImage = `url(${bg})`;
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center';
+    document.body.style.backgroundAttachment = 'fixed';
+  }
+
+  // 8. Bloomberg Live Clock
+  const clock = document.getElementById('bloomberg-clock');
+  if (clock) {
+    const updateClock = () => clock.textContent = new Date().toLocaleTimeString();
+    updateClock();
+    setInterval(updateClock, 1000);
+  }
+
+  // 9. 3D Tilt Effect for 3D-Profile
+  const tiltCard = document.getElementById('tilt-card-container');
+  if (tiltCard) {
+    const handleMove = (e) => {
+      const rect = tiltCard.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const deltaX = (e.clientX - centerX) / (window.innerWidth / 2);
+      const deltaY = (e.clientY - centerY) / (window.innerHeight / 2);
+      const rotateX = deltaY * -14;
+      const rotateY = deltaX * 14;
+      tiltCard.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
+    };
+    const handleLeave = () => {
+      tiltCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+    };
+    window.addEventListener('mousemove', handleMove);
+    window.addEventListener('mouseleave', handleLeave);
+  }
+}
+
+// Particle Trail Canvas for Carambit / Cursor Cosmetic
+(function initParticles() {
+  const canvas = document.getElementById('particles-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let width = canvas.width = window.innerWidth;
+  let height = canvas.height = window.innerHeight;
+
+  window.addEventListener('resize', () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  });
+
+  const particles = [];
+  function addParticle(x, y) {
+    particles.push({
+      x, y,
+      vx: (Math.random() - 0.5) * 1.5,
+      vy: (Math.random() - 0.5) * 1.5 - 0.5,
+      size: Math.random() * 2.5 + 1,
+      alpha: 0.9,
+      decay: Math.random() * 0.02 + 0.01
+    });
+  }
+
+  window.addEventListener('mousemove', (e) => {
+    for (let i = 0; i < 2; i++) {
+      addParticle(e.clientX, e.clientY);
+    }
+  });
+
+  // Ambient gentle drift particles
+  for (let i = 0; i < 25; i++) {
+    particles.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: -Math.random() * 0.4 - 0.1,
+      size: Math.random() * 2 + 0.5,
+      alpha: Math.random() * 0.6 + 0.2,
+      decay: 0.003
+    });
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    for (let i = particles.length - 1; i >= 0; i--) {
+      const p = particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.alpha -= p.decay;
+      if (p.alpha <= 0) {
+        particles.splice(i, 1);
+        continue;
+      }
+      ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`;
+      ctx.shadowBlur = 6;
+      ctx.shadowColor = '#ffffff';
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    requestAnimationFrame(animate);
+  }
+  animate();
+})();
+
+window.addEventListener('DOMContentLoaded', renderActiveProfileTheme);
+window.addEventListener('storage', renderActiveProfileTheme);
+</script>
+</body>
+</html>

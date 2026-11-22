@@ -1,0 +1,1183 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+<meta charset="utf-8" />
+<link rel="icon" type="image/png" href="https://ebio.gg/assets/img/favicon.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script>(function setInitialMode({ defaultMode = "system", themeColors: themeColors2, darkClassNames: darkClassNames2 = ["dark"], lightClassNames: lightClassNames2 = [], defaultTheme = "", modeStorageKey: modeStorageKey2 = "mode-watcher-mode", themeStorageKey: themeStorageKey2 = "mode-watcher-theme" }) {
+const rootEl = document.documentElement, mode = localStorage.getItem(modeStorageKey2) ?? defaultMode, theme = localStorage.getItem(themeStorageKey2) ?? defaultTheme, light = mode === "light" || mode === "system" && window.matchMedia("(prefers-color-scheme: light)").matches;
+if (light) {
+if (darkClassNames2.length) rootEl.classList.remove(...darkClassNames2.filter(Boolean));
+if (lightClassNames2.length) rootEl.classList.add(...lightClassNames2.filter(Boolean));
+} else {
+if (lightClassNames2.length) rootEl.classList.remove(...lightClassNames2.filter(Boolean));
+if (darkClassNames2.length) rootEl.classList.add(...darkClassNames2.filter(Boolean));
+}
+rootEl.style.colorScheme = light ? "light" : "dark";
+if (theme) { rootEl.setAttribute("data-theme", theme); localStorage.setItem(themeStorageKey2, theme); }
+localStorage.setItem(modeStorageKey2, mode);
+})({"defaultMode":"dark","darkClassNames":["dark"],"lightClassNames":[],"defaultTheme":"","modeStorageKey":"mode-watcher-mode","themeStorageKey":"mode-watcher-theme"});</script>
+<meta name="description" content="Manage your social media profiles and gaming accounts on ebio.gg." />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="canonical" href="https://ebio.gg/dashboard/socials" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ebio.gg/dashboard/socials" />
+<meta property="og:title" content="Social Links | ebio" />
+<meta property="og:description" content="Manage your social media profiles and gaming accounts on ebio.gg." />
+<meta property="og:image" content="https://ebio.gg/assets/img/og-default.png" />
+<title>Social Links | ebio</title>
+<link href="../assets/css/0.C2bWUDFM.css" rel="stylesheet" />
+<link href="../assets/css/StyleProvider.BXnnGwMW.css" rel="stylesheet" />
+<link href="../assets/css/_ModuleRoot.CidXDgXL.css" rel="stylesheet" />
+<link href="../assets/css/profile-renderer.DZOebmRz.css" rel="stylesheet" />
+<link href="../assets/css/site-header.DYfRv1QL.css" rel="stylesheet" />
+<link href="../assets/css/tokens.css" rel="stylesheet" />
+<link href="../assets/css/components.css" rel="stylesheet" />
+<style>
+  .switch-track {
+    position: relative;
+    display: inline-flex;
+    height: 22px;
+    width: 40px;
+    flex-shrink: 0;
+    cursor: pointer;
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    transition: background-color 0.2s ease-in-out;
+  }
+  .switch-thumb {
+    pointer-events: none;
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    border-radius: 9999px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease-in-out;
+  }
+  .switch-on { background-color: #ffffff; }
+  .switch-on .switch-thumb { transform: translateX(18px); background-color: #0c0c0c; }
+  .switch-off { background-color: #27272a; }
+  .switch-off .switch-thumb { transform: translateX(0); background-color: #ffffff; }
+
+  .pill-tab {
+    padding: 5px 12px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #a3a3a3;
+    background: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .pill-tab:hover {
+    color: #ffffff;
+    background: #1c1c1c;
+  }
+  .pill-tab.active {
+    color: #ffffff;
+    background: #262626;
+    border-color: #383838;
+  }
+</style>
+</head>
+<body class="bg-[#0c0c0c] text-foreground antialiased selection:bg-primary selection:text-primary-foreground">
+<div class="min-h-screen">
+<div data-sidebar-wrapper="true" style="--sidebar-width: 16rem; --sidebar-width-icon: 3rem;" class="group/sidebar-wrapper flex min-h-svh w-full has-[[data-variant=inset]]:bg-sidebar">
+
+  <aside class="text-sidebar-foreground group peer hidden md:block" data-state="expanded" data-collapsible="" data-variant="inset" data-side="left" data-slot="sidebar">
+    <div data-slot="sidebar-gap" class="w-(--sidebar-width) relative bg-transparent transition-[width] duration-200 ease-linear group-data-[collapsible=offcanvas]:w-0 group-data-[side=right]:rotate-180 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]"></div>
+    <div data-slot="sidebar-container" class="w-(--sidebar-width) fixed inset-y-0 z-10 hidden h-svh transition-[left,right,width] duration-200 ease-linear md:flex left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)] p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]">
+      <div data-sidebar="sidebar" data-slot="sidebar-inner" class="bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm">
+        
+        <!-- Header -->
+        <div data-slot="sidebar-header" data-sidebar="header" class="flex flex-col gap-2 p-2">
+          <ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-1">
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+              <a href="overview.html" class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left transition-[width,height,padding] focus-visible:ring-2 h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground data-[slot=sidebar-menu-button]:!p-1.5" data-slot="sidebar-menu-button">
+                <svg class="scale-110" viewBox="0 0 448 451" fill="none" style="width:20px;height:20px" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M320.084 158.225L418.817 256.251C495.333 347.814 404.031 484.201 292.096 442.255C255.935 428.707 171.294 341.309 159.585 304.709C146.864 264.934 146.303 221.308 154.112 170.924C157.249 150.682 200.137 160.325 204.415 185.788C210.652 222.967 194.275 273.073 219.668 305.564C232.028 321.375 290.604 383.558 305.779 390.7C338.765 406.249 380.138 388.395 390.978 353.443C408.416 297.242 348.58 266.666 318.769 229.515L320.098 158.225H320.084Z" fill="white"></path>
+                  <path d="M126.973 291.84L28.2397 193.814C-48.2763 102.251 43.0253 -34.1359 154.96 7.80972C191.122 21.3579 275.762 108.756 287.472 145.356C300.193 185.131 300.754 228.757 292.945 279.141C289.808 299.383 246.919 289.74 242.641 264.277C236.405 227.098 252.781 176.992 227.389 144.5C215.029 128.69 156.452 66.5067 141.278 59.3649C108.291 43.8156 66.9185 61.6701 56.0785 96.6224C38.6413 152.823 98.4766 183.398 128.288 220.55L126.959 291.84H126.973Z" fill="white"></path>
+                </svg>
+                <span class="text-base font-semibold">ebio.gg</span>
+              </a>
+            </li>
+          </ul>
+          <div class="mt-3">
+            <label for="workspace-select" class="text-muted-foreground mb-1 block text-xs">Workspace</label>
+            <select id="workspace-select" class="bg-background w-full rounded-md border p-2 text-sm">
+              <option value="xox" selected>xxx</option>
+              <option value="__add__">+ Add new workspace…</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Navigation Content -->
+        <div data-slot="sidebar-content" data-sidebar="content" class="flex min-h-0 flex-1 flex-col overflow-auto scroll-thin">
+          
+          <!-- General Group -->
+          <div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col px-2">
+            <div class="text-sidebar-foreground/70 flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium" data-slot="sidebar-group-label">General</div>
+            <div data-slot="sidebar-group-content" class="w-full text-sm">
+              <ul data-slot="sidebar-menu" class="flex w-full min-w-0 flex-col gap-1">
+                <li data-slot="sidebar-menu-item">
+                  <a href="overview.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-dashboard shrink-0"><path d="M12 13m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path d="M13.45 11.55l2.05 -2.05"></path><path d="M6.4 20a9 9 0 1 1 11.2 0z"></path></svg>
+                      <span>Overview</span>
+                    </button>
+                  </a>
+                </li>
+                <li data-slot="sidebar-menu-item">
+                  <a href="analytics.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-chart-bar shrink-0"><path d="M3 13a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path><path d="M15 9a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path><path d="M9 5a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path><path d="M4 20h14"></path></svg>
+                      <span>Analytics</span>
+                    </button>
+                  </a>
+                </li>
+                <li data-slot="sidebar-menu-item">
+                  <a href="workspace.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-briefcase shrink-0"><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"></path><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"></path><path d="M12 12l0 .01"></path><path d="M3 13a20 20 0 0 0 18 0"></path></svg>
+                      <span>Workspace</span>
+                    </button>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Customization Group -->
+          <div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col px-2 mt-2">
+            <div class="text-sidebar-foreground/70 flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium" data-slot="sidebar-group-label">Customization</div>
+            <div data-slot="sidebar-group-content" class="w-full text-sm">
+              <ul data-slot="sidebar-menu" class="flex w-full min-w-0 flex-col gap-1">
+                <li data-slot="sidebar-menu-item">
+                  <a href="themes.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-palette shrink-0"><path d="M12 21a9 9 0 0 1 0 -18c4.97 0 9 3.582 9 8c0 1.06 -.474 2.078 -1.318 2.828c-.844 .75 -1.989 1.172 -3.182 1.172h-2.5a2 2 0 0 0 -1 3.75a1.3 1.3 0 0 1 -1 2.25"></path><path d="M8.5 10.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path d="M12.5 7.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path d="M16.5 10.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path></svg>
+                      <span>Themes</span>
+                    </button>
+                  </a>
+                </li>
+                <li data-slot="sidebar-menu-item">
+                  <a href="colors.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-color-swatch shrink-0"><path d="M19 3h-4a2 2 0 0 0 -2 2v12a4 4 0 0 0 8 0v-12a2 2 0 0 0 -2 -2"></path><path d="M13 7.35l-2 -2a2 2 0 0 0 -2.828 0l-2.828 2.828a2 2 0 0 0 0 2.828l9 9"></path><path d="M7.3 13h-2.3a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h12"></path><path d="M17 17l0 .01"></path></svg>
+                      <span>Colors</span>
+                    </button>
+                  </a>
+                </li>
+                <li data-slot="sidebar-menu-item">
+                  <a href="modules.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-folder shrink-0"><path d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2"></path></svg>
+                      <span>Modules</span>
+                    </button>
+                  </a>
+                </li>
+                <li data-slot="sidebar-menu-item">
+                  <a href="cosmetics.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-sparkles shrink-0"><path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z"></path></svg>
+                      <span>Cosmetics</span>
+                    </button>
+                  </a>
+                </li>
+                <li data-slot="sidebar-menu-item">
+                  <a href="socials.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm bg-primary text-primary-foreground font-medium" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-share shrink-0"><path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M8.7 10.7l6.6 -3.4"></path><path d="M8.7 13.3l6.6 3.4"></path></svg>
+                      <span>Socials</span>
+                    </button>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Share & Referrals Group -->
+          <div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col px-2 mt-2">
+            <div class="text-sidebar-foreground/70 flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium" data-slot="sidebar-group-label">Share &amp; Referrals</div>
+            <div data-slot="sidebar-group-content" class="w-full text-sm">
+              <ul data-slot="sidebar-menu" class="flex w-full min-w-0 flex-col gap-1">
+                <li data-slot="sidebar-menu-item">
+                  <a href="share.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-qrcode shrink-0"><path d="M4 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path><path d="M7 17l0 .01"></path><path d="M14 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path><path d="M7 7l0 .01"></path><path d="M4 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path><path d="M17 7l0 .01"></path><path d="M14 14l3 0"></path><path d="M20 14l0 .01"></path><path d="M14 14l0 3"></path><path d="M14 20l3 0"></path><path d="M17 17l3 0"></path><path d="M20 17l0 3"></path></svg>
+                      <span>Share</span>
+                    </button>
+                  </a>
+                </li>
+                <li data-slot="sidebar-menu-item">
+                  <a href="affiliate.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-share shrink-0"><path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M8.7 10.7l6.6 -3.4"></path><path d="M8.7 13.3l6.6 3.4"></path></svg>
+                      <span>Affiliate</span>
+                    </button>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- VIP Unlocked Banner / Button -->
+          <div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col px-2 mt-auto pb-2">
+            <div data-slot="sidebar-group-content" class="w-full text-sm">
+              <a href="billing.html" class="hover:bg-primary/20 flex items-center justify-center gap-2 rounded-lg border border-white/10 px-4 py-3 font-semibold text-white transition-colors" style="background:rgba(255,106,31,0.08)">
+                <img src="https://ebio.gg/assets/ranks/unlimited.svg" alt="VIP" class="h-4 w-4" />
+                <span style="font-size:12.5px">Unlimited VIP (Free)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Footer -->
+        <div data-slot="sidebar-footer" data-sidebar="footer" class="flex flex-col gap-2 p-2 border-t border-border">
+          <ul data-slot="sidebar-menu" class="flex w-full min-w-0 flex-col gap-1">
+            <li data-slot="sidebar-menu-item" class="relative">
+              <a href="account.html" class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-12 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground">
+                <div data-slot="avatar" class="relative flex shrink-0 overflow-hidden size-8 rounded-lg grayscale">
+                  <span data-slot="avatar-fallback" class="bg-muted flex size-full items-center justify-center rounded-lg font-semibold text-xs" style="background:#222;color:#fff">WL</span>
+                </div>
+                <div class="grid flex-1 text-left text-sm leading-tight min-w-0">
+                  <div class="flex items-center gap-1.5"><span class="truncate font-medium">wlqihp1vnmcoojgspyp#0</span></div>
+                  <span class="text-muted-foreground truncate text-xs" style="color:var(--success)">Unlimited Plan</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-dots-vertical ml-auto size-4 shrink-0 text-muted-foreground"><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </aside>
+
+  <main data-slot="sidebar-inset" class="bg-background relative flex w-full flex-1 flex-col md:peer-data-[variant=inset]:m-2 md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-2 md:peer-data-[variant=inset]:rounded-xl md:peer-data-[variant=inset]:shadow-sm">
+    
+    <!-- Header -->
+    <header class="flex h-(--header-height) shrink-0 items-center gap-2 border-b border-border/80 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-(--header-height)">
+      <div class="flex w-full items-center gap-1 px-4 lg:gap-2 lg:px-6">
+        <button data-slot="sidebar-trigger" class="focus-visible:border-ring focus-visible:ring-ring/50 inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium outline-none transition-all hover:bg-accent hover:text-accent-foreground size-7 -ml-1" type="button" data-sidebar="trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-panel-left size-4"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 3v18"></path></svg>
+          <span class="sr-only">Toggle Sidebar</span>
+        </button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-400 mx-1"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+        <div class="flex flex-1 items-center justify-between gap-2">
+          <div>
+            <h1 class="text-sm font-bold leading-none tracking-tight">Social Links</h1>
+            <p class="text-muted-foreground hidden text-xs sm:block mt-0.5">Manage your social media profiles and gaming accounts</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="https://discord.ebio.gg" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-neutral-300 hover:text-white px-2 py-1 transition-colors">
+              Join our Discord
+            </a>
+            <a href="../u/xox.html" target="_blank" class="border border-border/80 bg-background/80 shadow-xs hover:bg-accent hover:text-accent-foreground inline-flex items-center justify-center gap-1.5 rounded-md text-xs font-semibold h-8 px-3 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+              Preview Profile
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Floating Preview Profile Tab -->
+    <a href="../u/xox.html" target="_blank" class="fixed top-1/2 right-0 z-40 flex -translate-y-1/2 items-center rounded-l-lg bg-white text-black px-2.5 py-6 shadow-2xl transition-all hover:bg-neutral-200" aria-label="Open profile preview">
+      <span style="writing-mode: vertical-rl; text-orientation: mixed;" class="text-[11px] font-semibold tracking-wider select-none">Preview Profile</span>
+    </a>
+
+    <!-- Page Content Area -->
+    <div class="flex flex-1 flex-col">
+      <div class="container-main flex flex-1 flex-col gap-2">
+        <div class="flex flex-col gap-6 px-4 py-6 lg:px-8 max-w-5xl">
+          
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h2 class="text-2xl font-bold tracking-tight">Social Links</h2>
+              <p class="text-muted-foreground text-xs mt-0.5">Manage your social media profiles, gaming tags, and crypto addresses</p>
+              <div class="flex items-center gap-2 mt-1.5">
+                <p id="links-counter" class="text-xs text-muted-foreground font-medium">0 / 30 social links used</p>
+                <span class="inline-flex items-center rounded bg-emerald-500/20 border border-emerald-500/30 px-1.5 py-0.2 text-[10px] font-semibold text-emerald-400">Unlimited Plan (Free)</span>
+              </div>
+            </div>
+            
+            <button id="open-add-modal-btn" type="button" class="bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-xs font-semibold transition-colors shadow-sm self-start sm:self-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              Add Social Link
+            </button>
+          </div>
+
+          <!-- ACTIVE SOCIAL LINKS LIST CONTAINER -->
+          <div class="space-y-3" id="social-links-container">
+            <!-- Rendered dynamically with official SVG logos -->
+          </div>
+
+          <!-- Empty State -->
+          <div id="empty-state" class="bg-[#121212] border border-dashed border-[#282828] rounded-xl p-8 text-center space-y-3">
+            <div class="mx-auto flex size-12 items-center justify-center rounded-full bg-[#1c1c1c] text-neutral-400">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-foreground">No social links added yet</h3>
+              <p class="text-xs text-muted-foreground max-w-sm mx-auto mt-1">
+                Add Discord, GitHub, Twitter, Guns.lol, Steam, Bitcoin, or any of the 31 available platforms to your profile.
+              </p>
+            </div>
+            <button type="button" onclick="openModal()" class="border border-[#2e2e2e] bg-[#1a1a1a] hover:bg-[#252525] text-xs font-medium px-4 py-2 rounded-lg text-foreground transition-colors inline-block">
+              + Choose a Platform
+            </button>
+          </div>
+
+          <!-- ICON STYLE SETTINGS CARD -->
+          <div class="bg-[#121212] rounded-xl border border-[#222222] p-6 shadow-sm space-y-5">
+            <div>
+              <h3 class="font-bold text-base text-foreground">Icon Style</h3>
+              <p class="text-muted-foreground text-xs mt-0.5">Choose how your social media icons are displayed on your profile</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Icon Pack -->
+              <div class="space-y-1.5">
+                <label class="text-xs font-medium text-foreground block">Icon Pack</label>
+                <select id="icon-pack-select" class="w-full bg-[#111111] border border-[#262626] rounded-lg px-3.5 py-2 text-xs text-foreground outline-none cursor-pointer">
+                  <option value="default" selected>Default (Official Brand Logos)</option>
+                  <option value="minimal">Minimal (Monochrome)</option>
+                  <option value="color">Color (Vibrant Solid)</option>
+                  <option value="bordered">Bordered (Outlined Badges)</option>
+                </select>
+              </div>
+
+              <!-- Icon Size -->
+              <div class="space-y-1.5">
+                <label class="text-xs font-medium text-foreground block">Icon Size</label>
+                <select id="icon-size-select" class="w-full bg-[#111111] border border-[#262626] rounded-lg px-3.5 py-2 text-xs text-foreground outline-none cursor-pointer">
+                  <option value="small">Small (20px)</option>
+                  <option value="medium" selected>Medium (24px)</option>
+                  <option value="large">Large (32px)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="flex justify-end pt-1">
+              <button id="save-settings-btn" type="button" class="bg-[#181818] hover:bg-[#222222] border border-[#2c2c2c] text-neutral-200 px-4 py-2 rounded-lg text-xs font-semibold transition-colors">
+                Save Icon Style
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+</div>
+</div>
+
+<!-- ======================================================== -->
+<!-- MODAL: ADD SOCIAL LINK (With Real Logos for All 31 Platforms) -->
+<!-- ======================================================== -->
+<div id="add-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden">
+  <div class="bg-[#121212] border border-[#262626] rounded-2xl w-full max-w-2xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+    
+    <!-- Modal Header -->
+    <div class="p-5 border-b border-[#222222] flex items-center justify-between shrink-0">
+      <div>
+        <h3 class="text-base font-bold text-foreground">Add Social Link</h3>
+        <p class="text-xs text-muted-foreground mt-0.5">Select a platform or community to add to your public profile</p>
+      </div>
+      <button type="button" onclick="closeModal()" class="text-neutral-400 hover:text-white p-1 rounded-lg hover:bg-[#1a1a1a] transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <!-- Search & Category Filters -->
+    <div class="p-4 border-b border-[#1f1f1f] space-y-3 shrink-0 bg-[#0f0f0f]">
+      <div class="flex items-center bg-[#151515] border border-[#262626] rounded-xl focus-within:border-primary/60 transition-colors cursor-text" style="height: 42px; padding: 0 12px; gap: 10px;" onclick="document.getElementById('platform-search').focus()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-neutral-500 shrink-0 pointer-events-none"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input id="platform-search" type="text" placeholder="Search 31 platforms (e.g. discord, guns.lol, steam, kick, bitcoin)..." class="w-full bg-transparent text-xs text-foreground outline-none border-none p-0" />
+      </div>
+
+      <!-- Categories -->
+      <div class="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none text-xs">
+        <button type="button" class="pill-tab active" onclick="filterCategory('all', this)">All (31)</button>
+        <button type="button" class="pill-tab" onclick="filterCategory('social', this)">Social & Chat</button>
+        <button type="button" class="pill-tab" onclick="filterCategory('media', this)">Streaming & Video</button>
+        <button type="button" class="pill-tab" onclick="filterCategory('bio', this)">Bio Links</button>
+        <button type="button" class="pill-tab" onclick="filterCategory('gaming', this)">Gaming</button>
+        <button type="button" class="pill-tab" onclick="filterCategory('crypto', this)">Crypto</button>
+        <button type="button" class="pill-tab" onclick="filterCategory('creator', this)">Creator</button>
+        <button type="button" class="pill-tab" onclick="filterCategory('custom', this)">Custom</button>
+      </div>
+    </div>
+
+    <!-- Platforms Grid with Logos -->
+    <div class="p-5 overflow-y-auto flex-1 grid grid-cols-1 sm:grid-cols-2 gap-3" id="platforms-grid">
+      
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="github" data-cat="social" data-name="github" onclick="addSocialLink('github')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/github.svg" class="size-6 object-contain" alt="GitHub" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #24292e">GI</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">GitHub</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://github.com/</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="discord_user" data-cat="social" data-name="discord (username)" onclick="addSocialLink('discord_user')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/discord.svg" class="size-6 object-contain" alt="Discord (Username)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #5865F2">DI</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Discord (Username)</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">Copy</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">@</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="discord_server" data-cat="social" data-name="discord (server link)" onclick="addSocialLink('discord_server')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/discord.svg" class="size-6 object-contain" alt="Discord (Server Link)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #5865F2">DI</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Discord (Server Link)</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://discord.gg/</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="twitter" data-cat="social" data-name="twitter / x" onclick="addSocialLink('twitter')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/twitter.svg" class="size-6 object-contain" alt="Twitter / X" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #000000">TW</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Twitter / X</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://x.com/</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="snapchat" data-cat="social" data-name="snapchat" onclick="addSocialLink('snapchat')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/snapchat.svg" class="size-6 object-contain" alt="Snapchat" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #FFFC00">SN</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Snapchat</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://snapchat.com/add/</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="threads" data-cat="social" data-name="threads" onclick="addSocialLink('threads')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/threads.svg" class="size-6 object-contain" alt="Threads" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #000000">TH</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Threads</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://threads.net/@</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="instagram" data-cat="social" data-name="instagram" onclick="addSocialLink('instagram')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/instagram.svg" class="size-6 object-contain" alt="Instagram" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #E4405F">IN</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Instagram</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://instagram.com/</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="telegram" data-cat="social" data-name="telegram" onclick="addSocialLink('telegram')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/telegram.svg" class="size-6 object-contain" alt="Telegram" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #229ED9">TE</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Telegram</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://t.me/</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="whatsapp" data-cat="social" data-name="whatsapp" onclick="addSocialLink('whatsapp')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/whatsapp.svg" class="size-6 object-contain" alt="WhatsApp" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #25D366">WH</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">WhatsApp</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://wa.me/</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="reddit" data-cat="social" data-name="reddit" onclick="addSocialLink('reddit')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/reddit.svg" class="size-6 object-contain" alt="Reddit" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #FF4500">RE</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Reddit</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://reddit.com/u/</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="pinterest" data-cat="social" data-name="pinterest" onclick="addSocialLink('pinterest')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/pinterest.svg" class="size-6 object-contain" alt="Pinterest" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #E60023">PI</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Pinterest</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://pinterest.com/</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="youtube" data-cat="media" data-name="youtube" onclick="addSocialLink('youtube')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/youtube.svg" class="size-6 object-contain" alt="YouTube" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #FF0000">YO</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">YouTube</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://youtube.com/@</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="twitch" data-cat="media" data-name="twitch" onclick="addSocialLink('twitch')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/twitch.svg" class="size-6 object-contain" alt="Twitch" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #9146FF">TW</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Twitch</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://twitch.tv/</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="kick" data-cat="media" data-name="kick.com" onclick="addSocialLink('kick')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/kick.svg" class="size-6 object-contain" alt="Kick.com" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #53FC18">KI</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Kick.com</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://kick.com/</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="spotify" data-cat="media" data-name="spotify (song / album)" onclick="addSocialLink('spotify')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/spotify.svg" class="size-6 object-contain" alt="Spotify (Song / Album)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #1DB954">SP</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Spotify (Song / Album)</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://open.spotify.com/</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="guns_lol" data-cat="bio" data-name="guns.lol" onclick="addSocialLink('guns_lol')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/guns_lol.png" class="size-6 object-contain" alt="Guns.lol" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #18181b">GU</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Guns.lol</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://guns.lol/</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="feds_lol" data-cat="bio" data-name="feds.lol" onclick="addSocialLink('feds_lol')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/feds_lol.png" class="size-6 object-contain" alt="Feds.lol" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #1c1917">FE</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Feds.lol</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://feds.lol/</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="oguser" data-cat="bio" data-name="oguser.com" onclick="addSocialLink('oguser')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/oguser.png" class="size-6 object-contain" alt="OGUsers.com" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #2d3748">OG</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">OGUser.com</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://oguser.com/</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="linktree" data-cat="bio" data-name="linktree" onclick="addSocialLink('linktree')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/linktree.svg" class="size-6 object-contain" alt="Linktree" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #43E660">LI</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Linktree</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://linktr.ee/</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="beacons" data-cat="bio" data-name="beacons.ai" onclick="addSocialLink('beacons')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/beacons.png" class="size-6 object-contain" alt="Beacons.ai" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #2563EB">BE</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Beacons.ai</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://beacons.ai/</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="steam" data-cat="gaming" data-name="steam" onclick="addSocialLink('steam')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/steam.svg" class="size-6 object-contain" alt="Steam" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #171a21">ST</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Steam</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://steamcommunity.com/id/</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="xbox" data-cat="gaming" data-name="xbox" onclick="addSocialLink('xbox')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/xbox.svg" class="size-6 object-contain" alt="Xbox" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #107C10">XB</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Xbox</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">Copy</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">Gamertag: </p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="playstation" data-cat="gaming" data-name="playstation" onclick="addSocialLink('playstation')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/playstation.svg" class="size-6 object-contain" alt="PlayStation" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #003791">PL</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">PlayStation</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">Copy</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">PSN ID: </p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="patreon" data-cat="creator" data-name="patreon" onclick="addSocialLink('patreon')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/patreon.svg" class="size-6 object-contain" alt="Patreon" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #FF424D">PA</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Patreon</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://patreon.com/</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="onlyfans" data-cat="creator" data-name="onlyfans" onclick="addSocialLink('onlyfans')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/onlyfans.svg" class="size-6 object-contain" alt="OnlyFans" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #00AFF0">ON</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">OnlyFans</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://onlyfans.com/</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="fansly" data-cat="creator" data-name="fansly" onclick="addSocialLink('fansly')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/fansly.svg" class="size-6 object-contain" alt="Fansly" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #2B82E8">FA</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Fansly</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">URL</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://fansly.com/</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="bitcoin" data-cat="crypto" data-name="bitcoin address" onclick="addSocialLink('bitcoin')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/bitcoin.svg" class="size-6 object-contain" alt="Bitcoin Address" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #F7931A">BI</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Bitcoin Address</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">Copy</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">BTC: </p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="ethereum" data-cat="crypto" data-name="ethereum address" onclick="addSocialLink('ethereum')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/ethereum.svg" class="size-6 object-contain" alt="Ethereum Address" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #627EEA">ET</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Ethereum Address</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">Copy</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">ETH: </p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="litecoin" data-cat="crypto" data-name="litecoin address" onclick="addSocialLink('litecoin')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/litecoin.svg" class="size-6 object-contain" alt="Litecoin Address" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #345D9D">LI</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Litecoin Address</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">Copy</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">LTC: </p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="ton" data-cat="crypto" data-name="ton (gram) address" onclick="addSocialLink('ton')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/ton.svg" class="size-6 object-contain" alt="TON (Gram) Address" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #0088CC">TO</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">TON (Gram) Address</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">Copy</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">TON: </p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+
+    <button type="button" class="platform-btn group flex items-center gap-3 rounded-xl border border-[#262626] bg-[#141414] p-3 text-left transition-all hover:border-primary/50 hover:bg-[#1a1a1a] hover:scale-[1.01]" data-id="custom" data-cat="custom" data-name="custom link" onclick="addSocialLink('custom')">
+      <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#1a1a1a] border border-[#282828] p-1.5 shadow-sm overflow-hidden group-hover:scale-105 transition-transform">
+        <img src="../assets/socials/default/custom.svg" class="size-6 object-contain" alt="Custom Link" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="hidden font-bold text-xs" style="color: #ff6a1f">CU</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <span class="font-semibold text-xs text-foreground group-hover:text-primary transition-colors truncate">Custom Link</span>
+          <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">Custom</span>
+        </div>
+        <p class="text-[11px] text-muted-foreground truncate font-mono">https://</p>
+      </div>
+      <div class="text-neutral-500 group-hover:text-primary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14m-7-7h14"/></svg>
+      </div>
+    </button>
+    
+    </div>
+
+  </div>
+</div>
+
+<!-- Toast Notice -->
+<div id="socials-toast" class="fixed bottom-6 right-6 z-50 transform transition-all duration-300 translate-y-20 opacity-0 pointer-events-none bg-emerald-500 text-white text-sm font-medium px-4 py-2.5 rounded-lg shadow-xl flex items-center gap-2">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+  <span>Saved!</span>
+</div>
+
+<script src="../assets/js/clone.js"></script>
+<script>
+const PLATFORMS_DATA = [{"id": "github", "name": "GitHub", "icon": "github.svg", "cat": "social", "prefix": "https://github.com/", "placeholder": "username", "color": "#24292e", "type": "click", "badge": "URL"}, {"id": "discord_user", "name": "Discord (Username)", "icon": "discord.svg", "cat": "social", "prefix": "@", "placeholder": "username or user ID", "color": "#5865F2", "type": "copy", "badge": "Copy"}, {"id": "discord_server", "name": "Discord (Server Link)", "icon": "discord.svg", "cat": "social", "prefix": "https://discord.gg/", "placeholder": "invite_code", "color": "#5865F2", "type": "click", "badge": "URL"}, {"id": "twitter", "name": "Twitter / X", "icon": "twitter.svg", "cat": "social", "prefix": "https://x.com/", "placeholder": "username", "color": "#000000", "type": "click", "badge": "URL"}, {"id": "snapchat", "name": "Snapchat", "icon": "snapchat.svg", "cat": "social", "prefix": "https://snapchat.com/add/", "placeholder": "username", "color": "#FFFC00", "textColor": "#000000", "type": "click", "badge": "URL"}, {"id": "threads", "name": "Threads", "icon": "threads.svg", "cat": "social", "prefix": "https://threads.net/@", "placeholder": "username", "color": "#000000", "type": "click", "badge": "URL"}, {"id": "instagram", "name": "Instagram", "icon": "instagram.svg", "cat": "social", "prefix": "https://instagram.com/", "placeholder": "username", "color": "#E4405F", "type": "click", "badge": "URL"}, {"id": "telegram", "name": "Telegram", "icon": "telegram.svg", "cat": "social", "prefix": "https://t.me/", "placeholder": "username", "color": "#229ED9", "type": "click", "badge": "URL"}, {"id": "whatsapp", "name": "WhatsApp", "icon": "whatsapp.svg", "cat": "social", "prefix": "https://wa.me/", "placeholder": "phone number with country code", "color": "#25D366", "type": "click", "badge": "URL"}, {"id": "reddit", "name": "Reddit", "icon": "reddit.svg", "cat": "social", "prefix": "https://reddit.com/u/", "placeholder": "username", "color": "#FF4500", "type": "click", "badge": "URL"}, {"id": "pinterest", "name": "Pinterest", "icon": "pinterest.svg", "cat": "social", "prefix": "https://pinterest.com/", "placeholder": "username", "color": "#E60023", "type": "click", "badge": "URL"}, {"id": "youtube", "name": "YouTube", "icon": "youtube.svg", "cat": "media", "prefix": "https://youtube.com/@", "placeholder": "channel_username", "color": "#FF0000", "type": "click", "badge": "URL"}, {"id": "twitch", "name": "Twitch", "icon": "twitch.svg", "cat": "media", "prefix": "https://twitch.tv/", "placeholder": "username", "color": "#9146FF", "type": "click", "badge": "URL"}, {"id": "kick", "name": "Kick.com", "icon": "kick.svg", "cat": "media", "prefix": "https://kick.com/", "placeholder": "username", "color": "#53FC18", "textColor": "#000000", "type": "click", "badge": "URL"}, {"id": "spotify", "name": "Spotify (Song / Album)", "icon": "spotify.svg", "cat": "media", "prefix": "https://open.spotify.com/", "placeholder": "track/id or album/id", "color": "#1DB954", "textColor": "#000000", "type": "click", "badge": "URL"}, {"id": "guns_lol", "name": "Guns.lol", "icon": "guns_lol.png", "cat": "bio", "prefix": "https://guns.lol/", "placeholder": "handle", "color": "#18181b", "type": "click", "badge": "URL"}, {"id": "feds_lol", "name": "Feds.lol", "icon": "feds_lol.png", "cat": "bio", "prefix": "https://feds.lol/", "placeholder": "handle", "color": "#1c1917", "type": "click", "badge": "URL"}, {"id": "ogusers", "name": "OGUsers.com", "icon": "ogusers.svg", "cat": "bio", "prefix": "https://oguser.com/", "placeholder": "username or profile ID", "color": "#2d3748", "type": "click", "badge": "URL"}, {"id": "linktree", "name": "Linktree", "icon": "linktree.svg", "cat": "bio", "prefix": "https://linktr.ee/", "placeholder": "username", "color": "#43E660", "textColor": "#000000", "type": "click", "badge": "URL"}, {"id": "beacons", "name": "Beacons.ai", "icon": "beacons.png", "cat": "bio", "prefix": "https://beacons.ai/", "placeholder": "username", "color": "#2563EB", "type": "click", "badge": "URL"}, {"id": "steam", "name": "Steam", "icon": "steam.svg", "cat": "gaming", "prefix": "https://steamcommunity.com/id/", "placeholder": "custom_url or Steam ID", "color": "#171a21", "type": "click", "badge": "URL"}, {"id": "xbox", "name": "Xbox", "icon": "xbox.svg", "cat": "gaming", "prefix": "Gamertag: ", "placeholder": "Gamertag", "color": "#107C10", "type": "copy", "badge": "Copy"}, {"id": "playstation", "name": "PlayStation", "icon": "playstation.svg", "cat": "gaming", "prefix": "PSN ID: ", "placeholder": "Online ID", "color": "#003791", "type": "copy", "badge": "Copy"}, {"id": "patreon", "name": "Patreon", "icon": "patreon.svg", "cat": "creator", "prefix": "https://patreon.com/", "placeholder": "creator_name", "color": "#FF424D", "type": "click", "badge": "URL"}, {"id": "onlyfans", "name": "OnlyFans", "icon": "onlyfans.svg", "cat": "creator", "prefix": "https://onlyfans.com/", "placeholder": "username", "color": "#00AFF0", "textColor": "#000000", "type": "click", "badge": "URL"}, {"id": "fansly", "name": "Fansly", "icon": "fansly.svg", "cat": "creator", "prefix": "https://fansly.com/", "placeholder": "username", "color": "#2B82E8", "type": "click", "badge": "URL"}, {"id": "bitcoin", "name": "Bitcoin Address", "icon": "bitcoin.svg", "cat": "crypto", "prefix": "BTC: ", "placeholder": "1... or bc1q...", "color": "#F7931A", "textColor": "#000000", "type": "copy", "badge": "Copy"}, {"id": "ethereum", "name": "Ethereum Address", "icon": "ethereum.svg", "cat": "crypto", "prefix": "ETH: ", "placeholder": "0x... or .eth", "color": "#627EEA", "type": "copy", "badge": "Copy"}, {"id": "litecoin", "name": "Litecoin Address", "icon": "litecoin.svg", "cat": "crypto", "prefix": "LTC: ", "placeholder": "L... or ltc1...", "color": "#345D9D", "type": "copy", "badge": "Copy"}, {"id": "ton", "name": "TON (Gram) Address", "icon": "ton.svg", "cat": "crypto", "prefix": "TON: ", "placeholder": "EQ... or UQ...", "color": "#0088CC", "type": "copy", "badge": "Copy"}, {"id": "custom", "name": "Custom Link", "icon": "custom.svg", "cat": "custom", "prefix": "https://", "placeholder": "yourdomain.com/link", "color": "#ff6a1f", "type": "click", "badge": "Custom"}];
+
+let userSocials = JSON.parse(localStorage.getItem('ebio_user_socials') || '[]');
+
+if (userSocials.length === 0) {
+  userSocials = [
+    { id: 'github', val: 'octocat', enabled: true },
+    { id: 'discord_user', val: 'moistlongboy', enabled: true },
+    { id: 'guns_lol', val: 'jacky', enabled: true },
+    { id: 'kick', val: 'streamer', enabled: true },
+    { id: 'bitcoin', val: 'bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh', enabled: true }
+  ];
+  saveToStorage();
+}
+
+const toast = document.getElementById('socials-toast');
+function showToast(msg) {
+  if (msg) toast.querySelector('span').textContent = msg;
+  toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+  setTimeout(() => {
+    toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+  }, 2500);
+}
+
+function saveToStorage() {
+  localStorage.setItem('ebio_user_socials', JSON.stringify(userSocials));
+}
+
+function renderSocials() {
+  const container = document.getElementById('social-links-container');
+  const emptyState = document.getElementById('empty-state');
+  const counter = document.getElementById('links-counter');
+
+  counter.textContent = userSocials.length + ' / 30 social links used';
+
+  if (userSocials.length === 0) {
+    container.innerHTML = '';
+    emptyState.classList.remove('hidden');
+    return;
+  }
+
+  emptyState.classList.add('hidden');
+
+  container.innerHTML = userSocials.map((item, idx) => {
+    const p = PLATFORMS_DATA.find(x => x.id === item.id) || {
+      name: item.id,
+      icon: 'custom.svg',
+      prefix: 'https://',
+      placeholder: 'value',
+      color: '#333333',
+      badge: 'Link'
+    };
+    const switchClass = item.enabled ? 'switch-on' : 'switch-off';
+
+    return `
+    <div class="bg-[#121212] rounded-xl border border-[#222222] p-4 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3 transition-colors hover:border-[#2e2e2e]">
+      
+      <!-- Left side: Platform logo, name & input -->
+      <div class="flex items-center gap-3.5 flex-1 min-w-0">
+        <!-- Reorder Handles -->
+        <div class="flex flex-col text-neutral-600 gap-0.5 shrink-0 cursor-grab">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/></svg>
+        </div>
+
+        <!-- Official Brand Logo -->
+        <div class="size-10 rounded-xl flex items-center justify-center p-1.5 shrink-0 bg-[#171717] border border-[#282828] shadow-sm">
+          <img src="../assets/socials/default/${p.icon}" class="size-6 object-contain" alt="${p.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <span class="hidden font-bold text-xs" style="color: ${p.color}">${p.name.substring(0, 2).toUpperCase()}</span>
+        </div>
+
+        <!-- Input group with Prefix -->
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-1.5 mb-1">
+            <span class="text-xs font-bold text-foreground truncate">${p.name}</span>
+            <span class="rounded bg-neutral-800 px-1.5 py-0.2 text-[9px] font-medium text-neutral-400 uppercase">${p.badge}</span>
+          </div>
+
+          <div class="flex items-center bg-[#101010] border border-[#282828] rounded-lg overflow-hidden focus-within:border-primary/50 transition-colors">
+            <span class="px-2.5 py-1.5 text-[11px] text-muted-foreground bg-[#161616] border-r border-[#262626] select-none font-mono shrink-0">${p.prefix}</span>
+            <input type="text" value="${item.val || ''}" placeholder="${p.placeholder}" onchange="updateSocialVal(${idx}, this.value)" class="w-full bg-transparent px-3 py-1.5 text-xs text-foreground outline-none font-mono" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: Toggle & Delete actions -->
+      <div class="flex items-center justify-end gap-3 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#1c1c1c] shrink-0">
+        <div class="flex items-center gap-2">
+          <span class="text-[11px] font-medium text-muted-foreground">${item.enabled ? 'Enabled' : 'Disabled'}</span>
+          <button type="button" class="switch-track ${switchClass}" onclick="toggleSocial(${idx})" aria-label="Toggle link">
+            <span class="switch-thumb"></span>
+          </button>
+        </div>
+
+        <button type="button" onclick="removeSocial(${idx})" class="text-neutral-500 hover:text-red-400 p-1.5 rounded-lg hover:bg-neutral-800 transition-colors" title="Delete link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+        </button>
+      </div>
+
+    </div>
+    `;
+  }).join('');
+}
+
+function updateSocialVal(idx, val) {
+  userSocials[idx].val = val.trim();
+  saveToStorage();
+  showToast('Link updated!');
+}
+
+function toggleSocial(idx) {
+  userSocials[idx].enabled = !userSocials[idx].enabled;
+  saveToStorage();
+  renderSocials();
+  showToast(userSocials[idx].enabled ? 'Link enabled!' : 'Link disabled!');
+}
+
+function removeSocial(idx) {
+  const name = userSocials[idx].id;
+  userSocials.splice(idx, 1);
+  saveToStorage();
+  renderSocials();
+  showToast('Removed ' + name);
+}
+
+function addSocialLink(id) {
+  if (userSocials.some(x => x.id === id && id !== 'custom')) {
+    showToast('Platform already added!');
+    closeModal();
+    return;
+  }
+  userSocials.push({ id: id, val: '', enabled: true });
+  saveToStorage();
+  renderSocials();
+  closeModal();
+  showToast('Added ' + id + ' to links!');
+}
+
+const modal = document.getElementById('add-modal');
+const searchInput = document.getElementById('platform-search');
+
+function openModal() {
+  modal.classList.remove('hidden');
+  searchInput.value = '';
+  filterPlatforms('');
+  setTimeout(() => searchInput.focus(), 50);
+}
+
+function closeModal() {
+  modal.classList.add('hidden');
+}
+
+document.getElementById('open-add-modal-btn').addEventListener('click', openModal);
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) closeModal();
+});
+
+function filterCategory(cat, tabEl) {
+  document.querySelectorAll('.pill-tab').forEach(t => t.classList.remove('active'));
+  tabEl.classList.add('active');
+
+  const query = searchInput.value.toLowerCase().trim();
+  document.querySelectorAll('.platform-btn').forEach(btn => {
+    const btnCat = btn.getAttribute('data-cat');
+    const btnName = btn.getAttribute('data-name');
+    const matchesCat = (cat === 'all' || btnCat === cat);
+    const matchesQuery = (!query || btnName.includes(query));
+    btn.style.display = (matchesCat && matchesQuery) ? 'flex' : 'none';
+  });
+}
+
+searchInput.addEventListener('input', (e) => {
+  filterPlatforms(e.target.value.toLowerCase().trim());
+});
+
+function filterPlatforms(query) {
+  document.querySelectorAll('.platform-btn').forEach(btn => {
+    const name = btn.getAttribute('data-name');
+    const matchesQuery = (!query || name.includes(query));
+    btn.style.display = matchesQuery ? 'flex' : 'none';
+  });
+}
+
+document.getElementById('save-settings-btn').addEventListener('click', () => {
+  const pack = document.getElementById('icon-pack-select').value;
+  const size = document.getElementById('icon-size-select').value;
+  localStorage.setItem('ebio_social_icon_pack', pack);
+  localStorage.setItem('ebio_social_icon_size', size);
+  showToast('Icon style settings saved!');
+});
+
+renderSocials();
+</script>
+</body>
+</html>

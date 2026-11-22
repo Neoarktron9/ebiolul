@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+<meta charset="utf-8" />
+<link rel="icon" type="image/png" href="https://ebio.gg/assets/img/favicon.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script>(function setInitialMode({ defaultMode = "system", themeColors: themeColors2, darkClassNames: darkClassNames2 = ["dark"], lightClassNames: lightClassNames2 = [], defaultTheme = "", modeStorageKey: modeStorageKey2 = "mode-watcher-mode", themeStorageKey: themeStorageKey2 = "mode-watcher-theme" }) {
+const rootEl = document.documentElement, mode = localStorage.getItem(modeStorageKey2) ?? defaultMode, theme = localStorage.getItem(themeStorageKey2) ?? defaultTheme, light = mode === "light" || mode === "system" && window.matchMedia("(prefers-color-scheme: light)").matches;
+if (light) {
+if (darkClassNames2.length) rootEl.classList.remove(...darkClassNames2.filter(Boolean));
+if (lightClassNames2.length) rootEl.classList.add(...lightClassNames2.filter(Boolean));
+} else {
+if (lightClassNames2.length) rootEl.classList.remove(...lightClassNames2.filter(Boolean));
+if (darkClassNames2.length) rootEl.classList.add(...darkClassNames2.filter(Boolean));
+}
+rootEl.style.colorScheme = light ? "light" : "dark";
+if (theme) { rootEl.setAttribute("data-theme", theme); localStorage.setItem(themeStorageKey2, theme); }
+localStorage.setItem(modeStorageKey2, mode);
+})({"defaultMode":"dark","darkClassNames":["dark"],"lightClassNames":[],"defaultTheme":"","modeStorageKey":"mode-watcher-mode","themeStorageKey":"mode-watcher-theme"});</script>
+<meta name="description" content="Choose a visual theme for your profile on ebio.gg." />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="canonical" href="https://ebio.gg/dashboard/themes" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ebio.gg/dashboard/themes" />
+<meta property="og:title" content="Themes | ebio" />
+<meta property="og:description" content="Choose a visual theme for your profile on ebio.gg." />
+<meta property="og:image" content="https://ebio.gg/assets/img/og-default.png" />
+<title>Themes | ebio</title>
+<link href="../assets/css/0.C2bWUDFM.css" rel="stylesheet" />
+<link href="../assets/css/StyleProvider.BXnnGwMW.css" rel="stylesheet" />
+<link href="../assets/css/_ModuleRoot.CidXDgXL.css" rel="stylesheet" />
+<link href="../assets/css/profile-renderer.DZOebmRz.css" rel="stylesheet" />
+<link href="../assets/css/site-header.DYfRv1QL.css" rel="stylesheet" />
+<link href="../assets/css/tokens.css" rel="stylesheet" />
+<link href="../assets/css/components.css" rel="stylesheet" />
+<style>
+  .theme-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 1152px;
+    margin: 0 auto;
+  }
+  @media (min-width: 768px) {
+    .theme-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (min-width: 1024px) {
+    .theme-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+
+  .theme-card {
+    background: #111111;
+    border: 1px solid #222222;
+    border-radius: 16px;
+    padding: 16px;
+    text-align: left;
+    transition: border-color 0.15s ease, background 0.15s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    outline: none;
+  }
+  .theme-card:hover {
+    border-color: #444444;
+    background: #141414;
+  }
+  .theme-card.active {
+    border-color: #ffffff !important;
+  }
+
+  .preview-box {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    background: #090909;
+    border: 1px solid #1f1f1f;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 14px;
+    display: flex;
+    box-sizing: border-box;
+  }
+
+  .theme-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 14px;
+    letter-spacing: -0.01em;
+  }
+  .theme-desc {
+    font-size: 12px;
+    color: #888888;
+    line-height: 1.5;
+    margin-top: 4px;
+  }
+
+  /* Mockup Elements */
+  .mock-avatar-circle {
+    border-radius: 50%;
+    background: #e5e5e5;
+    flex-shrink: 0;
+  }
+  .mock-avatar-square {
+    border-radius: 4px;
+    background: #e5e5e5;
+    flex-shrink: 0;
+  }
+  .mock-social-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 2px;
+    background: #555555;
+    display: inline-block;
+  }
+  .mock-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ffffff;
+    flex-shrink: 0;
+  }
+  .mock-line-white {
+    background: #ffffff;
+    border-radius: 4px;
+  }
+  .mock-line-gray {
+    background: #666666;
+    border-radius: 3px;
+  }
+  .mock-line-dark {
+    background: #444444;
+    border-radius: 3px;
+  }
+  .mock-card {
+    background: #181818;
+    border: 1px solid #252525;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+
+  .selected-check-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    z-index: 10;
+  }
+</style>
+</head>
+<body class="bg-[#0c0c0c] text-foreground antialiased selection:bg-primary selection:text-primary-foreground">
+<div class="min-h-screen">
+<div data-sidebar-wrapper="true" style="--sidebar-width: 16rem; --sidebar-width-icon: 3rem;" class="group/sidebar-wrapper flex min-h-svh w-full has-[[data-variant=inset]]:bg-sidebar">
+
+  <aside class="text-sidebar-foreground group peer hidden md:block" data-state="expanded" data-collapsible="" data-variant="inset" data-side="left" data-slot="sidebar">
+    <div data-slot="sidebar-gap" class="w-(--sidebar-width) relative bg-transparent transition-[width] duration-200 ease-linear group-data-[collapsible=offcanvas]:w-0 group-data-[side=right]:rotate-180 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]"></div>
+    <div data-slot="sidebar-container" class="w-(--sidebar-width) fixed inset-y-0 z-10 hidden h-svh transition-[left,right,width] duration-200 ease-linear md:flex left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)] p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]">
+      <div data-sidebar="sidebar" data-slot="sidebar-inner" class="bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm">
+        
+        <!-- Header -->
+        <div data-slot="sidebar-header" data-sidebar="header" class="flex flex-col gap-2 p-2">
+          <ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-1">
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+              <a href="overview.html" class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left transition-[width,height,padding] focus-visible:ring-2 h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground data-[slot=sidebar-menu-button]:!p-1.5" data-slot="sidebar-menu-button">
+                <svg class="scale-110" viewBox="0 0 448 451" fill="none" style="width:20px;height:20px" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M320.084 158.225L418.817 256.251C495.333 347.814 404.031 484.201 292.096 442.255C255.935 428.707 171.294 341.309 159.585 304.709C146.864 264.934 146.303 221.308 154.112 170.924C157.249 150.682 200.137 160.325 204.415 185.788C210.652 222.967 194.275 273.073 219.668 305.564C232.028 321.375 290.604 383.558 305.779 390.7C338.765 406.249 380.138 388.395 390.978 353.443C408.416 297.242 348.58 266.666 318.769 229.515L320.098 158.225H320.084Z" fill="white"></path>
+                  <path d="M126.973 291.84L28.2397 193.814C-48.2763 102.251 43.0253 -34.1359 154.96 7.80972C191.122 21.3579 275.762 108.756 287.472 145.356C300.193 185.131 300.754 228.757 292.945 279.141C289.808 299.383 246.919 289.74 242.641 264.277C236.405 227.098 252.781 176.992 227.389 144.5C215.029 128.69 156.452 66.5067 141.278 59.3649C108.291 43.8156 66.9185 61.6701 56.0785 96.6224C38.6413 152.823 98.4766 183.398 128.288 220.55L126.959 291.84H126.973Z" fill="white"></path>
+                </svg>
+                <span class="text-base font-semibold">ebio.gg</span>
+              </a>
+            </li>
+          </ul>
+          <div class="mt-3">
+            <label for="workspace-select" class="text-muted-foreground mb-1 block text-xs">Workspace</label>
+            <select id="workspace-select" class="bg-background w-full rounded-md border p-2 text-sm">
+              <option value="xox" selected>xxx</option>
+              <option value="__add__">+ Add new workspace…</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Navigation Content -->
+        <div data-slot="sidebar-content" data-sidebar="content" class="flex min-h-0 flex-1 flex-col overflow-auto scroll-thin">
+          
+          <!-- General Group -->
+          <div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col px-2">
+            <div class="text-sidebar-foreground/70 flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium" data-slot="sidebar-group-label">General</div>
+            <div data-slot="sidebar-group-content" class="w-full text-sm">
+              <ul data-slot="sidebar-menu" class="flex w-full min-w-0 flex-col gap-1">
+                <li data-slot="sidebar-menu-item">
+                  <a href="overview.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-dashboard shrink-0"><path d="M12 13m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path d="M13.45 11.55l2.05 -2.05"></path><path d="M6.4 20a9 9 0 1 1 11.2 0z"></path></svg>
+                      <span>Overview</span>
+                    </button>
+                  </a>
+                </li>
+                <li data-slot="sidebar-menu-item">
+                  <a href="analytics.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-chart-bar shrink-0"><path d="M3 13a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path><path d="M15 9a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path><path d="M9 5a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path><path d="M4 20h14"></path></svg>
+                      <span>Analytics</span>
+                    </button>
+                  </a>
+                </li>
+                <li data-slot="sidebar-menu-item">
+                  <a href="workspace.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-briefcase shrink-0"><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"></path><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"></path><path d="M12 12l0 .01"></path><path d="M3 13a20 20 0 0 0 18 0"></path></svg>
+                      <span>Workspace</span>
+                    </button>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Customization Group -->
+          <div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col px-2 mt-2">
+            <div class="text-sidebar-foreground/70 flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium" data-slot="sidebar-group-label">Customization</div>
+            <div data-slot="sidebar-group-content" class="w-full text-sm">
+              <ul data-slot="sidebar-menu" class="flex w-full min-w-0 flex-col gap-1">
+                <li data-slot="sidebar-menu-item">
+                  <a href="themes.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm bg-primary text-primary-foreground font-medium" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-palette shrink-0"><path d="M12 21a9 9 0 0 1 0 -18c4.97 0 9 3.582 9 8c0 1.06 -.474 2.078 -1.318 2.828c-.844 .75 -1.989 1.172 -3.182 1.172h-2.5a2 2 0 0 0 -1 3.75a1.3 1.3 0 0 1 -1 2.25"></path><path d="M8.5 10.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path d="M12.5 7.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path d="M16.5 10.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path></svg>
+                      <span>Themes</span>
+                    </button>
+                  </a>
+                </li>
+                <li data-slot="sidebar-menu-item">
+                  <a href="colors.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-color-swatch shrink-0"><path d="M19 3h-4a2 2 0 0 0 -2 2v12a4 4 0 0 0 8 0v-12a2 2 0 0 0 -2 -2"></path><path d="M13 7.35l-2 -2a2 2 0 0 0 -2.828 0l-2.828 2.828a2 2 0 0 0 0 2.828l9 9"></path><path d="M7.3 13h-2.3a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h12"></path><path d="M17 17l0 .01"></path></svg>
+                      <span>Colors</span>
+                    </button>
+                  </a>
+                </li>
+                <li data-slot="sidebar-menu-item">
+                  <a href="modules.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-folder shrink-0"><path d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2"></path></svg>
+                      <span>Modules</span>
+                    </button>
+                  </a>
+                </li>
+                <li data-slot="sidebar-menu-item">
+                  <a href="cosmetics.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-sparkles shrink-0"><path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z"></path></svg>
+                      <span>Cosmetics</span>
+                    </button>
+                  </a>
+                </li>
+                <li data-slot="sidebar-menu-item">
+                  <a href="socials.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-share shrink-0"><path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M8.7 10.7l6.6 -3.4"></path><path d="M8.7 13.3l6.6 3.4"></path></svg>
+                      <span>Socials</span>
+                    </button>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Share & Referrals Group -->
+          <div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col px-2 mt-2">
+            <div class="text-sidebar-foreground/70 flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium" data-slot="sidebar-group-label">Share &amp; Referrals</div>
+            <div data-slot="sidebar-group-content" class="w-full text-sm">
+              <ul data-slot="sidebar-menu" class="flex w-full min-w-0 flex-col gap-1">
+                <li data-slot="sidebar-menu-item">
+                  <a href="share.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-qrcode shrink-0"><path d="M4 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path><path d="M7 17l0 .01"></path><path d="M14 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path><path d="M7 7l0 .01"></path><path d="M4 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path><path d="M17 7l0 .01"></path><path d="M14 14l3 0"></path><path d="M20 14l0 .01"></path><path d="M14 14l0 3"></path><path d="M14 20l3 0"></path><path d="M17 17l3 0"></path><path d="M20 17l0 3"></path></svg>
+                      <span>Share</span>
+                    </button>
+                  </a>
+                </li>
+                <li data-slot="sidebar-menu-item">
+                  <a href="affiliate.html" class="no-underline">
+                    <button class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-8 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-share shrink-0"><path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M8.7 10.7l6.6 -3.4"></path><path d="M8.7 13.3l6.6 3.4"></path></svg>
+                      <span>Affiliate</span>
+                    </button>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- VIP Unlocked Banner / Button -->
+          <div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col px-2 mt-auto pb-2">
+            <div data-slot="sidebar-group-content" class="w-full text-sm">
+              <a href="billing.html" class="hover:bg-primary/20 flex items-center justify-center gap-2 rounded-lg border border-white/10 px-4 py-3 font-semibold text-white transition-colors" style="background:rgba(255,106,31,0.08)">
+                <img src="https://ebio.gg/assets/ranks/unlimited.svg" alt="VIP" class="h-4 w-4" />
+                <span style="font-size:12.5px">Unlimited VIP (Free)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Footer -->
+        <div data-slot="sidebar-footer" data-sidebar="footer" class="flex flex-col gap-2 p-2 border-t border-border">
+          <ul data-slot="sidebar-menu" class="flex w-full min-w-0 flex-col gap-1">
+            <li data-slot="sidebar-menu-item" class="relative">
+              <a href="account.html" class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left h-12 text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground">
+                <div data-slot="avatar" class="relative flex shrink-0 overflow-hidden size-8 rounded-lg grayscale">
+                  <span data-slot="avatar-fallback" class="bg-muted flex size-full items-center justify-center rounded-lg font-semibold text-xs" style="background:#222;color:#fff">WL</span>
+                </div>
+                <div class="grid flex-1 text-left text-sm leading-tight min-w-0">
+                  <div class="flex items-center gap-1.5"><span class="truncate font-medium">wlqihp1vnmcoojgspyp#0</span></div>
+                  <span class="text-muted-foreground truncate text-xs" style="color:var(--success)">Unlimited Plan</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-dots-vertical ml-auto size-4 shrink-0 text-muted-foreground"><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </aside>
+
+  <main data-slot="sidebar-inset" class="bg-background relative flex w-full flex-1 flex-col md:peer-data-[variant=inset]:m-2 md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-2 md:peer-data-[variant=inset]:rounded-xl md:peer-data-[variant=inset]:shadow-sm">
+    
+    <!-- Header (Screenshot 3) -->
+    <header class="flex h-(--header-height) shrink-0 items-center gap-2 border-b border-border/80 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-(--header-height)">
+      <div class="flex w-full items-center gap-1 px-4 lg:gap-2 lg:px-6">
+        <button data-slot="sidebar-trigger" class="focus-visible:border-ring focus-visible:ring-ring/50 inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium outline-none transition-all hover:bg-accent hover:text-accent-foreground size-7 -ml-1" type="button" data-sidebar="trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-panel-left size-4"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 3v18"></path></svg>
+          <span class="sr-only">Toggle Sidebar</span>
+        </button>
+        <div data-slot="separator" class="bg-border shrink-0 w-[1px] mr-2 h-4"></div>
+        <div class="flex flex-1 items-center justify-between gap-2">
+          <div>
+            <h1 class="text-sm font-bold leading-none tracking-tight">Themes</h1>
+            <p class="text-muted-foreground hidden text-xs sm:block mt-0.5">Choose a visual theme for your profile</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="../u/xox.html" target="_blank" class="border border-border/80 bg-background/80 shadow-xs hover:bg-accent hover:text-accent-foreground inline-flex items-center justify-center gap-1.5 rounded-md text-xs font-semibold h-8 px-3 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+              Preview Profile
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Floating Preview Profile Tab (Screenshot 3 right edge) -->
+    <a href="../u/xox.html" target="_blank" class="fixed top-1/2 right-0 z-40 flex -translate-y-1/2 items-center rounded-l-lg bg-white text-black px-2.5 py-6 shadow-2xl transition-all hover:bg-neutral-200" aria-label="Open profile preview">
+      <span style="writing-mode: vertical-rl; text-orientation: mixed;" class="text-[11px] font-semibold tracking-wider select-none">Preview Profile</span>
+    </a>
+
+    <!-- Main Grid Area (Matches Screenshot 3 1:1) -->
+    <div style="flex: 1; display: flex; flex-direction: column; padding: 24px;">
+      <div style="max-width: 1100px; width: 100%; margin: 0 auto;">
+        <div class="theme-grid">
+
+          <!-- Theme 1: Default -->
+          <div data-theme="default" class="theme-card">
+            <div class="preview-box" style="flex-direction: column; justify-content: center; gap: 8px;">
+              <!-- Header Section with Avatar -->
+              <div class="mock-card" style="padding: 8px 12px; gap: 10px; width: 100%;">
+                <div class="mock-avatar-circle" style="width: 32px; height: 32px;"></div>
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                  <div class="mock-line-white" style="width: 110px; height: 7px;"></div>
+                  <div style="display: flex; gap: 4px; margin-top: 2px;">
+                    <span class="mock-social-dot"></span>
+                    <span class="mock-social-dot"></span>
+                    <span class="mock-social-dot"></span>
+                  </div>
+                </div>
+              </div>
+              <!-- Stacked Module Cards with Status Dots -->
+              <div class="mock-card" style="padding: 8px 12px; width: 100%;">
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                  <div class="mock-line-gray" style="width: 120px; height: 6px;"></div>
+                  <div class="mock-line-dark" style="width: 80px; height: 5px;"></div>
+                </div>
+                <span class="mock-status-dot"></span>
+              </div>
+              <div class="mock-card" style="padding: 8px 12px; width: 100%;">
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                  <div class="mock-line-gray" style="width: 100px; height: 6px;"></div>
+                  <div class="mock-line-dark" style="width: 110px; height: 5px;"></div>
+                </div>
+                <span class="mock-status-dot"></span>
+              </div>
+            </div>
+            <div class="theme-title">Default</div>
+            <div class="theme-desc">Clean and modern profile layout with header section</div>
+          </div>
+
+          <!-- Theme 2: Bloomberg -->
+          <div data-theme="bloomberg" class="theme-card">
+            <div class="preview-box" style="flex-direction: column; padding: 10px; gap: 6px;">
+              <!-- Terminal Top Bar -->
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #222222; padding-bottom: 6px; font-family: monospace; font-size: 8px; color: #777777; letter-spacing: 1px; text-transform: uppercase;">
+                <span>PROFILE</span>
+                <span>TERMINAL | 03:15:01 PM</span>
+              </div>
+              <!-- Split Body -->
+              <div style="display: flex; gap: 10px; flex: 1; padding-top: 4px;">
+                <!-- Left Column -->
+                <div style="width: 32%; border-right: 1px solid #222222; padding-right: 8px; display: flex; flex-direction: column; gap: 6px;">
+                  <div class="mock-avatar-square" style="width: 30px; height: 30px;"></div>
+                  <div style="display: flex; gap: 3px; margin-top: 1px;">
+                    <span class="mock-social-dot"></span>
+                    <span class="mock-social-dot"></span>
+                    <span class="mock-social-dot"></span>
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 3px; margin-top: 4px;">
+                    <div class="mock-line-dark" style="width: 100%; height: 4px;"></div>
+                    <div class="mock-line-dark" style="width: 70%; height: 4px;"></div>
+                    <div class="mock-line-dark" style="width: 50%; height: 4px;"></div>
+                  </div>
+                </div>
+                <!-- Right Column -->
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 8px; justify-content: center;">
+                  <div class="mock-card" style="padding: 8px 10px; width: 100%;">
+                    <div style="display: flex; flex-direction: column; gap: 4px;">
+                      <div class="mock-line-gray" style="width: 90px; height: 6px;"></div>
+                      <div class="mock-line-dark" style="width: 60px; height: 4px;"></div>
+                    </div>
+                    <span class="mock-status-dot"></span>
+                  </div>
+                  <div class="mock-card" style="padding: 8px 10px; width: 100%;">
+                    <div style="display: flex; flex-direction: column; gap: 4px;">
+                      <div class="mock-line-gray" style="width: 80px; height: 6px;"></div>
+                      <div class="mock-line-dark" style="width: 95px; height: 4px;"></div>
+                    </div>
+                    <span class="mock-status-dot"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="theme-title">Bloomberg</div>
+            <div class="theme-desc">Terminal-inspired design with data classification sidebar</div>
+          </div>
+
+          <!-- Theme 3: OG ebio -->
+          <div data-theme="og-ebio" class="theme-card">
+            <div class="preview-box" style="flex-direction: column; align-items: center; justify-content: center; gap: 6px;">
+              <!-- Centered Circular Avatar & Socials -->
+              <div class="mock-avatar-circle" style="width: 44px; height: 44px; box-shadow: 0 4px 14px rgba(0,0,0,0.5);"></div>
+              <div class="mock-line-white" style="width: 65px; height: 7px; margin-top: 2px;"></div>
+              <div style="display: flex; gap: 4px; justify-content: center;">
+                <span class="mock-social-dot"></span>
+                <span class="mock-social-dot"></span>
+                <span class="mock-social-dot"></span>
+              </div>
+              <!-- Centered Stacked Cards -->
+              <div class="mock-card" style="width: 100%; max-width: 220px; padding: 7px 10px; margin-top: 4px;">
+                <div style="display: flex; flex-direction: column; gap: 3px;">
+                  <div class="mock-line-gray" style="width: 95px; height: 5px;"></div>
+                  <div class="mock-line-dark" style="width: 65px; height: 4px;"></div>
+                </div>
+                <span class="mock-status-dot"></span>
+              </div>
+              <div class="mock-card" style="width: 100%; max-width: 220px; padding: 7px 10px;">
+                <div style="display: flex; flex-direction: column; gap: 3px;">
+                  <div class="mock-line-gray" style="width: 80px; height: 5px;"></div>
+                  <div class="mock-line-dark" style="width: 70px; height: 4px;"></div>
+                </div>
+                <span class="mock-status-dot"></span>
+              </div>
+            </div>
+            <div class="theme-title">OG ebio</div>
+            <div class="theme-desc">Centered card layout with backdrop blur effect</div>
+          </div>
+
+          <!-- Theme 4: 3D Profile -->
+          <div data-theme="3d-profile" class="theme-card">
+            <div class="preview-box" style="align-items: center; justify-content: center;">
+              <!-- 3D Tilt Card -->
+              <div style="width: 100%; max-width: 210px; background: #161616; border: 1px solid #2a2a2a; border-radius: 12px; padding: 10px 12px; box-shadow: 0 16px 32px rgba(0,0,0,0.6); display: flex; flex-direction: column; gap: 8px; transform: perspective(600px) rotateY(-4deg) rotateX(4deg);">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div class="mock-avatar-circle" style="width: 28px; height: 28px;"></div>
+                  <div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                    <div class="mock-line-white" style="width: 70px; height: 6px;"></div>
+                    <div style="display: flex; gap: 3px;">
+                      <span class="mock-social-dot"></span>
+                      <span class="mock-social-dot"></span>
+                      <span class="mock-social-dot"></span>
+                    </div>
+                  </div>
+                </div>
+                <div style="background: #202020; border-radius: 6px; padding: 6px 8px; display: flex; align-items: center; justify-content: space-between;">
+                  <div class="mock-line-gray" style="width: 75px; height: 5px;"></div>
+                  <span class="mock-status-dot"></span>
+                </div>
+                <div style="background: #202020; border-radius: 6px; padding: 6px 8px; display: flex; align-items: center; justify-content: space-between;">
+                  <div class="mock-line-gray" style="width: 90px; height: 5px;"></div>
+                  <span class="mock-status-dot"></span>
+                </div>
+              </div>
+            </div>
+            <div class="theme-title">3D Profile</div>
+            <div class="theme-desc">Interactive 3D tilt card with glassmorphism effects</div>
+          </div>
+
+          <!-- Theme 5: Bento -->
+          <div data-theme="bento" class="theme-card">
+            <div class="preview-box" style="align-items: center; gap: 10px;">
+              <!-- Left Bento Tile (Avatar) -->
+              <div style="width: 38%; height: 120px; background: #181818; border: 1px solid #252525; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 8px; box-sizing: border-box;">
+                <div class="mock-avatar-circle" style="width: 28px; height: 28px;"></div>
+                <div class="mock-line-white" style="width: 48px; height: 6px;"></div>
+                <div style="display: flex; gap: 3px;">
+                  <span class="mock-social-dot"></span>
+                  <span class="mock-social-dot"></span>
+                  <span class="mock-social-dot"></span>
+                </div>
+              </div>
+              <!-- Right Bento Column (2 Stacked Cards) -->
+              <div style="flex: 1; display: flex; flex-direction: column; gap: 8px; height: 120px; justify-content: space-between;">
+                <div class="mock-card" style="padding: 10px; flex: 1;">
+                  <div style="display: flex; flex-direction: column; gap: 4px;">
+                    <div class="mock-line-gray" style="width: 65px; height: 6px;"></div>
+                    <div class="mock-line-dark" style="width: 45px; height: 4px;"></div>
+                  </div>
+                  <span class="mock-status-dot"></span>
+                </div>
+                <div class="mock-card" style="padding: 10px; flex: 1;">
+                  <div style="display: flex; flex-direction: column; gap: 4px;">
+                    <div class="mock-line-gray" style="width: 75px; height: 6px;"></div>
+                    <div class="mock-line-dark" style="width: 50px; height: 4px;"></div>
+                  </div>
+                  <span class="mock-status-dot"></span>
+                </div>
+              </div>
+            </div>
+            <div class="theme-title">Bento</div>
+            <div class="theme-desc">Two-column glassmorphism layout with translucent cards</div>
+          </div>
+
+          <!-- Theme 6: Blur (Active in Screenshot 3) -->
+          <div data-theme="blur" class="theme-card active">
+            <div class="preview-box" style="align-items: center; justify-content: center;">
+              <!-- Selected Checkmark Badge -->
+              <div class="selected-check-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <!-- Centered Glassmorphic Phone Plate -->
+              <div style="width: 140px; height: 100%; background: rgba(28, 28, 28, 0.85); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 10px 8px; display: flex; flex-direction: column; gap: 6px; box-shadow: 0 12px 28px rgba(0,0,0,0.7); box-sizing: border-box;">
+                <div class="mock-avatar-square" style="width: 22px; height: 22px;"></div>
+                <div class="mock-line-white" style="width: 55px; height: 5px;"></div>
+                <div style="display: flex; gap: 3px;">
+                  <span class="mock-social-dot"></span>
+                  <span class="mock-social-dot"></span>
+                  <span class="mock-social-dot"></span>
+                </div>
+                <div style="background: #242424; border-radius: 4px; padding: 4px 6px; display: flex; align-items: center; justify-content: space-between; margin-top: 2px;">
+                  <div class="mock-line-gray" style="width: 55px; height: 4px;"></div>
+                  <span class="mock-status-dot" style="width: 4px; height: 4px;"></span>
+                </div>
+                <div style="background: #242424; border-radius: 4px; padding: 4px 6px; display: flex; align-items: center; justify-content: space-between;">
+                  <div class="mock-line-gray" style="width: 48px; height: 4px;"></div>
+                  <span class="mock-status-dot" style="width: 4px; height: 4px;"></span>
+                </div>
+                <div style="background: #242424; border-radius: 4px; padding: 4px 6px; display: flex; align-items: center; justify-content: space-between;">
+                  <div class="mock-line-gray" style="width: 60px; height: 4px;"></div>
+                  <span class="mock-status-dot" style="width: 4px; height: 4px;"></span>
+                </div>
+              </div>
+            </div>
+            <div class="theme-title">Blur</div>
+            <div class="theme-desc">Glassmorphism design with backdrop blur plate and grain texture effects</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+</div>
+</div>
+
+<div id="theme-toast" class="fixed bottom-6 right-6 z-50 transform transition-all duration-300 translate-y-20 opacity-0 pointer-events-none bg-emerald-500 text-white text-sm font-medium px-4 py-2.5 rounded-lg shadow-xl flex items-center gap-2">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+  <span>Theme updated!</span>
+</div>
+
+<script src="../assets/js/clone.js"></script>
+<script>
+const themeCards = document.querySelectorAll('.theme-card');
+const toast = document.getElementById('theme-toast');
+
+function showThemeToast(name) {
+  if (!toast) return;
+  toast.querySelector('span').textContent = 'Theme set to ' + name + '!';
+  toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+  setTimeout(() => {
+    toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+  }, 2500);
+}
+
+function selectTheme(key, showToast = true) {
+  const normKey = (key || 'BLUR').toUpperCase().replace(/\s+/g, '-');
+  themeCards.forEach(c => {
+    c.classList.remove('active');
+    const chk = c.querySelector('.selected-check-badge');
+    if (chk) chk.remove();
+  });
+
+  let targetCard = Array.from(themeCards).find(c => {
+    const dTheme = (c.getAttribute('data-theme') || '').toUpperCase().replace(/\s+/g, '-');
+    const tTitle = (c.querySelector('.theme-title')?.textContent || '').toUpperCase().replace(/\s+/g, '-');
+    return dTheme === normKey || tTitle === normKey;
+  }) || themeCards[5]; // default to Blur if not matched
+
+  if (targetCard) {
+    targetCard.classList.add('active');
+    const preview = targetCard.querySelector('.preview-box');
+    if (preview) {
+      const badge = document.createElement('div');
+      badge.className = 'selected-check-badge';
+      badge.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+      preview.appendChild(badge);
+    }
+    const themeName = targetCard.querySelector('.theme-title')?.textContent.trim() || 'Theme';
+    localStorage.setItem('ebio_active_theme', normKey);
+    if (showToast) showThemeToast(themeName);
+  }
+}
+
+themeCards.forEach(card => {
+  card.addEventListener('click', () => {
+    const key = card.getAttribute('data-theme') || card.querySelector('.theme-title')?.textContent || 'BLUR';
+    selectTheme(key, true);
+  });
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  const active = localStorage.getItem('ebio_active_theme') || 'BLUR';
+  selectTheme(active, false);
+});
+</script>
+</body>
+</html>

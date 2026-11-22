@@ -1,0 +1,23 @@
+/* verbatim from _app/immutable/assets/StyleProvider.BXnnGwMW.css */
+.avatar-frame-wrapper{display:inline-block;position:relative}
+.avatar-frame-container{position:relative;width:var(--container-size);height:var(--container-size);display:flex;align-items:center;justify-content:center}
+.avatar-image{width:var(--avatar-size);height:var(--avatar-size);position:relative;z-index:1;overflow:hidden}
+.avatar-fallback{background-color:var(--profile-primary,var(--profile-accent,hsl(var(--muted))))}
+.frame-border{position:absolute;top:0;right:0;bottom:0;left:0;pointer-events:none;z-index:2;border-radius:inherit}
+.frame-black .frame-border{box-sizing:border-box;border:var(--border-width) solid #000;filter:drop-shadow(0 0 10px rgba(0,0,0,.5))}
+.frame-white .frame-border{box-sizing:border-box;border:var(--border-width) solid #fff;filter:drop-shadow(0 0 10px rgba(255,255,255,.5))}
+.frame-gradient .frame-border{border:none;background:linear-gradient(135deg,var(--profile-accent,#667eea) 0%,var(--profile-primary,#764ba2) 100%);-webkit-mask:radial-gradient(circle at center,transparent calc(var(--avatar-size) / 2),black calc(var(--avatar-size) / 2 + 1px));mask:radial-gradient(circle at center,transparent calc(var(--avatar-size) / 2),black calc(var(--avatar-size) / 2 + 1px))}
+.frame-rainbow .frame-border{border:none;background:linear-gradient(45deg,red,orange,#ff0,green,#00f,indigo,violet);animation:rainbow-rotate 3s linear infinite;-webkit-mask:radial-gradient(circle at center,transparent calc(var(--avatar-size) / 2),black calc(var(--avatar-size) / 2 + 1px));mask:radial-gradient(circle at center,transparent calc(var(--avatar-size) / 2),black calc(var(--avatar-size) / 2 + 1px))}
+.frame-spinner .frame-border{border:none;background:conic-gradient(from 0deg,var(--profile-accent,#667eea) 0%,transparent 50%);animation:spinner-rotate 2s linear infinite;-webkit-mask:radial-gradient(circle at center,transparent calc(var(--avatar-size) / 2),black calc(var(--avatar-size) / 2 + 1px));mask:radial-gradient(circle at center,transparent calc(var(--avatar-size) / 2),black calc(var(--avatar-size) / 2 + 1px))}
+.frame-glow .frame-border{box-sizing:border-box;border:var(--border-width) solid var(--profile-accent,#60a5fa);box-shadow:0 0 20px var(--profile-accent,#60a5fa),0 0 40px var(--profile-accent,#60a5fa),inset 0 0 10px var(--profile-accent,#60a5fa)}
+.frame-pulse .frame-border{box-sizing:border-box;border:var(--border-width) solid var(--profile-primary,#a78bfa);animation:pulse-border 1.5s ease-in-out infinite}
+.sparkle{position:absolute;width:22%;height:22%;min-width:32px;min-height:32px;max-width:56px;max-height:56px;color:var(--profile-accent,#fbbf24);pointer-events:none;z-index:20;animation:sparkle-twinkle 2s ease-in-out infinite}
+.sparkle-top-right{top:-4px;right:-4px;animation-delay:0s}
+.sparkle-bottom-left{bottom:-4px;left:-4px;animation-delay:1s}
+.sparkle-star{filter:drop-shadow(0 0 4px currentColor)}
+@keyframes rainbow-rotate{0%{filter:hue-rotate(0deg)}to{filter:hue-rotate(360deg)}}
+@keyframes spinner-rotate{0%{transform:rotate(0)}to{transform:rotate(-360deg)}}
+@keyframes sparkle-twinkle{0%,to{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+@keyframes pulse-border{0%,to{opacity:1;box-shadow:0 0 0 0 var(--profile-primary,#a78bfa)}50%{opacity:.7;box-shadow:0 0 8px 2px var(--profile-primary,#a78bfa)}}
+.sparkle-text{background-image:var(--sparkle-url);background-size:50px 50px;background-position:center;background-repeat:repeat;animation:sparkle-drift 30s linear infinite;-webkit-text-fill-color:var(--text-color);text-fill-color:var(--text-color)}
+@keyframes sparkle-drift{0%{background-position:0 0}to{background-position:200px 200px}}
